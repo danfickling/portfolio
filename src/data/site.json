@@ -1,0 +1,41 @@
+{
+  "title": "Daniel Fickling",
+  "name": "Daniel Fickling",
+  "description": "Online Portfolio of Daniel Fickling",
+  "tagline": "Experience & Product Design Lead",
+  "standfirst": "I’m a design leader who brings pragmatic, user-centred thinking to complex digital problems.",
+  "email": "dan.fickling@gmail.com",
+  "resumeUrl": "https://docs.google.com/document/d/1xkRZ8o9EPcFbfavO08COqgXi-4ZPbegYm9ZL_kERZHc/edit?usp=sharing",
+  "typekitId": "jlf0psd",
+  "googleAnalyticsId": "UA-76752910-1",
+  "nav": [
+    { "id": "aboutAnchor", "label": "About", "href": "#about" },
+    { "id": "skillsAnchor", "label": "Skills & Experience", "href": "#skills" },
+    { "id": "workAnchor", "label": "Work", "href": "#work" },
+    { "label": "Email Me", "href": "mailto:dan.fickling@gmail.com", "external": true },
+    { "label": "Download Resume", "href": "https://docs.google.com/document/d/1xkRZ8o9EPcFbfavO08COqgXi-4ZPbegYm9ZL_kERZHc/edit?usp=sharing", "external": true }
+  ],
+  "about": {
+    "paragraph1": "Across enterprise platforms, SaaS products, and consumer brands, I’ve delivered measurable lifts in KPIs, customer satisfaction, and product performance for companies including Serko, Tesco, Virgin Trains, and NatWest.",
+    "paragraph2": "Grounded in evidence-based, user-centred design, I balance real user needs with commercial outcomes to create meaningful, scalable impact.",
+    "paragraph3": "My lean, evidence-led approach enables teams to move quickly and iterate with purpose, progressing from early experiments to products people genuinely love."
+},
+  "skills": [
+    {
+      "title": "UX/UI",
+      "description": "I've worked on projects from intial research through to the creation of personas, user goals and user flows in order to facilitate solutions. I've also built out fully wireframed solutions utilising tools such as Omnigraffle, Balsamiq, UXPin and InVision. Or prototyping I've used Proto.io for mobile apps as well as simple HTML prototypes built using generic frontend frameworks."
+    },
+    {
+      "title": "Brand Design",
+      "description": "Some digital projects have little to no brand guidelines available. In these cases I've worked on artifacts to help steer the design direction such as moodboards and style tiles. I've contributed to general brand development with competitor analysis, design research, moodboards and style guides."
+    },
+    {
+      "title": "Frontend Development",
+      "description": "I strive to use modern tools and processes in order to create readable, systematic and extendable code. I predominantly utilise BEM methodology and mobile first principles while coding in SASS and HTML5."
+    },
+    {
+      "title": "Design and Frontend Facilitation",
+      "description": "I've worked with other designers to provide critical feedback on details of design that could be problematic for users and/or developers and to help them create the appropriate artifacts for developers to work with. I've worked closely with developers to ensure they understand the designs and functionality while identifying potential problems and negotiating solutions."
+    }
+  ]
+}

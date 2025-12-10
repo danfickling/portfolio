@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "id": "dish",
+      "title": "Dish",
+      "description": "Worked closely with internal publishing team to understand audience and business requirements. Collaboratively worked on IA structure, wireframes, user-flows and facilitated Art Director in design. Worked with other frontend developers to implement frontend of site.",
+      "url": "http://www.dish.co.nz/",
+      "urlDisplay": "dish.co.nz",
+      "image": "dish.jpg",
+      "alt": "Dish Website"
+    },
+    {
+      "id": "tangible",
+      "title": "Tangible Media",
+      "description": "Contributed to developing wireframes of the purchase flow and account management sections of the Tangible SMS, with careful attention to allowing ease of use while ensuring compatibility for multiple scenarios of purchase and subscription management by customers. Designed the frontend of the site.",
+      "url": "http://www.tangiblemedia.co.nz/",
+      "urlDisplay": "tangiblemedia.co.nz",
+      "image": "tangible.jpg",
+      "alt": "Tangible Media Website"
+    },
+    {
+      "id": "toast",
+      "title": "Toast",
+      "description": "Worked with internal publishing team to redevelop existing Toast website to align with new branding, while introducing improved linking to parent Liquorland website. Created wireframes, HTML prototype, designed and built frontend.",
+      "url": "http://www.toastmag.co.nz/",
+      "urlDisplay": "toastmag.co.nz",
+      "image": "toast.jpg",
+      "alt": "Toast Magazine Website"
+    },
+    {
+      "id": "neveralone",
+      "title": "Never Alone",
+      "description": "Worked directly with Canteen to conceptualise the microsite component of the Never Alone national campaign. Worked on wireframes, designs and frontend build.",
+      "url": "http://web.archive.org/web/20150113033409/http://neveralone.co.nz",
+      "urlDisplay": "neveralone.co.nz",
+      "image": "neveralone.jpg",
+      "alt": "Never Alone Website"
+    },
+    {
+      "id": "homedirect",
+      "title": "Home Direct",
+      "description": "Collaboratively worked with the internal Home Direct team to understand and interpret the unique, multi-pay ecommerce solution Home Direct offers. Created user flows through the site, from signup through to checkout with key consideration paid to making the complex and multi-faceted process simple and intuitive for customers. Designed and built each page for Home Direct to implement.",
+      "url": "http://web.archive.org/web/20130805191047/http://www.homedirect.co.nz/",
+      "urlDisplay": "homedirect.co.nz",
+      "image": "homedirect.jpg",
+      "alt": "Home Direct Website"
+    },
+    {
+      "id": "eurotech",
+      "title": "Eurotech",
+      "description": "Worked with product owner on site requirements. Wireframed, designed and built frontend.",
+      "url": "http://www.eurotechdesign.co.nz/",
+      "urlDisplay": "eurotechdesign.co.nz",
+      "image": "eurotech.jpg",
+      "alt": "Eurotech Website"
+    },
+    {
+      "id": "jukebox",
+      "title": "Jukebox Mobile App",
+      "description": "Took initial app idea from scamps through to wireframes and detailed prototype. Worked with product owner and wider team to identify purpose, user-goals and business goals to create a fit for purpose, easy to use app. Unfulfilled project.",
+      "url": null,
+      "urlDisplay": null,
+      "image": "jukebox.gif",
+      "alt": "Jukebox mobile app prototype"
+    }
+  ]
+}

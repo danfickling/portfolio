@@ -1,0 +1,42 @@
+{
+  "positions": [
+    {
+      "title": "Interaction Designer and Frontend Developer",
+      "company": "ICG",
+      "period": "August 2011 - Present",
+      "hasProjects": true,
+      "achievements": "Bringing to life the potential of digital subscriptions with the rebuild of Dish and Tangible, creating a future-proof platform for further digital expansion of Tangible titles. Creating a meaningful component to a charitable organisation that positively impacted thousands of people.",
+      "responsibilities": "Wireframing and designing digital solutions under often tight timelines and budgets. Working with the wider development and design teams to ensure digital work is produced in ways that work for development, users and product owners. Building the frontend of websites and ensuring that the tools and processes for frontend are consistent and to a high standard."
+    },
+    {
+      "title": "Interaction Designer",
+      "company": "DNA",
+      "period": "July 2010 - July 2011",
+      "hasProjects": false,
+      "achievements": "Designed key online insurance tool for AMP. Designed mock packaging to aid in brand direction for new Sanitarium product.",
+      "responsibilities": "Designing brand collateral. Research phase design assets including competitor analysis and brand research for workshops.",
+      "keyProjects": [
+        {
+          "name": "AMP LifeTrack",
+          "description": "Researched and designed online AMP LifeTrack life insurance calculator."
+        },
+        {
+          "name": "Telecom Plan Wizard",
+          "description": "Provided design and layout options for Plan Wizard component of in-store touch screens."
+        },
+        {
+          "name": "Sanitarium Product Research",
+          "description": "Created moodboards and conducted research on multiple directions for new product. Designed several mockups for use in user testing."
+        }
+      ]
+    },
+    {
+      "title": "Designer",
+      "company": "HB Media",
+      "period": "November 2009 - April 2010",
+      "hasProjects": false,
+      "achievements": "Customised local version of Celsius eco-blog website for New Zealand market. Maintained and extended in-house publishing websites.",
+      "responsibilities": "Designed and built updates to in-house publishing websites"
+    }
+  ]
+}

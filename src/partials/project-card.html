@@ -1,0 +1,14 @@
+<div class="project project--{{id}}">
+  <div class="project__inner section">
+    <h5>{{title}}</h5>
+    <div class="row row@md">
+      <div class="gr-12 gr-6@md">
+        <p>{{description}}</p>
+        {{#if url}}
+        <p><a target="_blank" href="{{url}}">{{urlDisplay}}</a></p>
+        {{/if}}
+      </div>
+    </div>
+    <img class="project__img" data-action="zoom" src="/images/{{image}}" alt="{{alt}}" loading="lazy">
+  </div>
+</div>

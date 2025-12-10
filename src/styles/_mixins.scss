@@ -1,0 +1,55 @@
+// Mixins
+// =========================================
+@use 'variables' as *;
+
+// Breakpoint mixin (mobile-first)
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media screen and (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$name}' not found in $breakpoints map.";
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Visually hidden (accessible)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Reset button
+@mixin button-reset {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}

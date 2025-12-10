@@ -1,0 +1,34 @@
+<div class="section section--work">
+  <div class="row row@md">
+    <div class="gr-12">
+      <h4>{{title}} - {{company}} <span>{{period}}</span></h4>
+    </div>
+    <div class="gr-12 gr-6@md">
+      {{#if keyProjects}}
+      <div class="gr__inner">
+        <h4>Key Achievements</h4>
+        <p>{{achievements}}</p>
+      </div>
+      <div class="gr__inner">
+        <h4>Key Responsibilities</h4>
+        <p>{{responsibilities}}</p>
+      </div>
+      {{else}}
+      <h4>Key Achievements</h4>
+      <p>{{achievements}}</p>
+      {{/if}}
+    </div>
+    <div class="gr-12 gr-6@md">
+      {{#if keyProjects}}
+      <h4>Key Projects</h4>
+      {{#each keyProjects}}
+      <h5>{{this.name}}</h5>
+      <p>{{this.description}}</p>
+      {{/each}}
+      {{else}}
+      <h4>Key Responsibilities</h4>
+      <p>{{responsibilities}}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>

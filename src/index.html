@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{site.title}}</title>
+    <meta name="description" content="{{site.description}}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://use.typekit.net/{{site.typekitId}}.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{{site.googleAnalyticsId}}', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    
+  <div class="page-nav-toggle">
+    <span class="page-nav-toggle__top"></span>
+    <span class="page-nav-toggle__middle"></span>
+    <span class="page-nav-toggle__bottom"></span>
+  </div>
+  <div class="page-nav" id="page-nav">
+    <nav>
+      <ul>
+        {{#each site.nav}}
+        <li><a href="{{this.href}}" {{#if this.id}}id="{{this.id}}"{{/if}} {{#if this.external}}target="_blank"{{/if}} class="page-nav__link">{{this.label}}</a></li>
+        {{/each}}
+      </ul>
+    </nav>
+  </div>
+  <main id="content" class="page-content">
+    <div class="section section__top"></div>
+    <header class="section section--intro" id="intro">
+      <div class="section--intro__titles">
+        <h1>{{site.name}}</h1>
+        <h2>{{site.tagline}}</h2>
+      </div>
+      <p class="standfirst">
+        {{site.standfirst}}
+      </p>
+    </header>
+    <section class="section section--about" id="about">
+      <h3>About</h3>
+      <div class="row row@md">
+        <div class="gr-12 gr-6@md">
+          <p>{{site.about.paragraph1}}</p>
+        </div>
+        <div class="gr-12 gr-6@md">
+          <p>{{site.about.paragraph2}}</p>
+        </div>
+      </div>
+    </section>
+    <section class="section section--skills" id="skills">
+      <h3>Skills & Expertise</h3>
+      <div class="row row@md">
+        {{#each site.skills}}
+        <div class="gr-12 gr-6@md">
+          <h4>{{this.title}}</h4>
+          <p>{{this.description}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    <section id="work">
+      <div class="section section--work">
+        <h3>Work</h3>
+        <div class="row row@md">
+          <div class="gr-12">
+            <h4>{{experience.positions.[0].title}} - {{experience.positions.[0].company}} <span>{{experience.positions.[0].period}}</span></h4>
+          </div>
+          <div class="gr-12 gr-6@md">
+            <h4>Key Achievements</h4>
+            <p>{{experience.positions.[0].achievements}}</p>
+          </div>
+          <div class="gr-12 gr-6@md">
+            <h4>Key Responsibilities</h4>
+            <p>{{experience.positions.[0].responsibilities}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="projects">
+        {{#each projects}}
+        <div class="project project--{{this.id}}">
+          <div class="project__inner section">
+            <h5>{{this.title}}</h5>
+            <div class="row row@md">
+              <div class="gr-12 gr-6@md">
+                <p>{{this.description}}</p>
+                {{#if this.url}}
+                <p><a target="_blank" href="{{this.url}}">{{this.urlDisplay}}</a></p>
+                {{/if}}
+              </div>
+            </div>
+            <img class="project__img" data-action="zoom" src="/images/{{this.image}}" alt="{{this.alt}}">
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      <div class="section section--work">
+        <div class="row row@md">
+          <div class="gr-12">
+            <h4>{{experience.positions.[1].title}} - {{experience.positions.[1].company}} <span>{{experience.positions.[1].period}}</span></h4>
+          </div>
+          <div class="gr-12 gr-6@md">
+            <div class="gr__inner">
+              <h4>Key Achievements</h4>
+              <p>{{experience.positions.[1].achievements}}</p>
+            </div>
+            <div class="gr__inner">
+              <h4>Key Responsibilities</h4>
+              <p>{{experience.positions.[1].responsibilities}}</p>
+            </div>
+          </div>
+          <div class="gr-12 gr-6@md">
+              <h4>Key Projects</h4>
+              {{#each experience.positions.[1].keyProjects}}
+              <h5>{{this.name}}</h5>
+              <p>{{this.description}}</p>
+              {{/each}}
+              <br>
+          </div>
+        </div>
+        <div class="row row@md">
+          <div class="gr-12">
+            <h4>{{experience.positions.[2].title}} - {{experience.positions.[2].company}} <span>{{experience.positions.[2].period}}</span></h4>
+          </div>
+          <div class="gr-12 gr-6@md">
+            <h4>Key Achievements</h4>
+            <p>{{experience.positions.[2].achievements}}</p>
+          </div>
+          <div class="gr-12 gr-6@md">
+            <h4>Key Responsibilities</h4>
+            <p>{{experience.positions.[2].responsibilities}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <script type="module" src="/js/main.js"></script>
+    
+  </main></body>
+</html>

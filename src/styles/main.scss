@@ -1,0 +1,21 @@
+// Main Stylesheet
+// =========================================
+
+// Abstracts (no CSS output)
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base styles
+@import 'base';
+@import 'typography';
+@import 'grid';
+
+// Components
+@import 'navigation';
+@import 'sections';
+@import 'projects';
+
+// Utility classes
+.no-js {
+  // Styles for when JavaScript is disabled
+}

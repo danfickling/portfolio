@@ -1,76 +1,138 @@
 # Portfolio Site - Copilot Instructions
 
 ## Project Overview
-Static personal portfolio website for Daniel Fickling (UX/UI Designer & Frontend Developer). Single-page HTML site with smooth scroll navigation showcasing work history and project case studies.
+Personal portfolio website for Daniel Fickling (UX/UI Designer & Frontend Developer). Single-page static site with smooth scroll navigation, showcasing work history and project case studies.
+
+## Quick Start
+```bash
+npm install      # Install dependencies
+npm run dev      # Start dev server at localhost:5173
+npm run build    # Build for production to /dist
+npm run preview  # Preview production build
+```
 
 ## Architecture
 
-### File Structure
-- `index.html` - Single-page site with all content (sections: intro, about, skills, work/projects)
-- `styles/main.css` - Compiled/minified CSS (includes normalize.css + custom grid system)
-- `scripts/main.js` - Bundled JavaScript (includes GreenSock/GSAP TweenMax + ScrollTo plugin + jQuery)
-- `images/` - Project screenshots and assets
+### Directory Structure
+```
+├── src/
+│   ├── index.html          # Main template with Handlebars
+│   ├── data/               # JSON data files (easy content editing)
+│   │   ├── site.json       # Site config, nav, about, skills
+│   │   ├── projects.json   # Portfolio projects
+│   │   └── experience.json # Work history
+│   ├── partials/           # Reusable HTML components
+│   │   ├── head.html
+│   │   ├── navigation.html
+│   │   ├── intro.html
+│   │   ├── about.html
+│   │   ├── skills.html
+│   │   ├── project-card.html
+│   │   └── experience-card.html
+│   ├── styles/             # SCSS modules
+│   │   ├── main.scss       # Entry point
+│   │   ├── _variables.scss # Design tokens
+│   │   ├── _mixins.scss    # Reusable mixins
+│   │   ├── _base.scss      # Reset & base styles
+│   │   ├── _typography.scss
+│   │   ├── _grid.scss      # 12-column flexbox grid
+│   │   ├── _navigation.scss
+│   │   ├── _sections.scss
+│   │   └── _projects.scss
+│   └── js/
+│       ├── main.js         # Entry point
+│       └── modules/
+│           ├── navigation.js    # Mobile menu toggle
+│           ├── smooth-scroll.js # GSAP scroll animations
+│           └── image-zoom.js    # Medium-zoom for images
+├── public/                 # Static assets (copied to dist)
+│   ├── images/
+│   ├── favicon.ico
+│   └── robots.txt
+├── dist/                   # Production build output
+├── package.json
+└── vite.config.js
+```
 
 ### Technology Stack
-- **CSS**: Minified output with source maps (`.map` files indicate build process)
-- **JavaScript**: Browserify bundle containing:
-  - GreenSock TweenMax (animation library)
-  - GSAP ScrollToPlugin (smooth scrolling)
-  - jQuery 2.2.3
-- **Fonts**: Adobe Typekit (loaded via `use.typekit.net/jlf0psd.js`)
-- **Analytics**: Google Analytics (UA-76752910-1)
+- **Build**: Vite 5.x (fast HMR, ES modules)
+- **Templating**: Handlebars via vite-plugin-handlebars
+- **CSS**: SCSS with modular architecture
+- **JavaScript**: Vanilla ES modules (no jQuery)
+- **Animations**: GSAP 3.x (modern ES module import)
+- **Image Zoom**: medium-zoom library
+- **Fonts**: Adobe Typekit (async load)
+- **Analytics**: Google Analytics (UA)
+
+## Common Tasks
+
+### Add a New Project
+1. Add project object to `src/data/projects.json`:
+```json
+{
+  "id": "my-project",
+  "title": "My Project",
+  "description": "Project description...",
+  "url": "https://example.com/",
+  "urlDisplay": "example.com",
+  "image": "my-project.jpg",
+  "alt": "My Project Screenshot"
+}
+```
+2. Add image to `public/images/`
+
+### Add a New Skill
+Edit `src/data/site.json` → `skills` array:
+```json
+{
+  "title": "New Skill",
+  "description": "Skill description..."
+}
+```
+
+### Add Work Experience
+Edit `src/data/experience.json` → `positions` array
+
+### Modify Styling
+- **Colors/spacing**: Edit `src/styles/_variables.scss`
+- **Typography**: Edit `src/styles/_typography.scss`
+- **Grid/layout**: Edit `src/styles/_grid.scss`
+- **Components**: Edit respective `_component.scss` file
+
+### Add a New Section
+1. Create partial in `src/partials/new-section.html`
+2. Add section styles to `src/styles/_sections.scss`
+3. Include in `src/index.html` with `{{> new-section}}`
+4. Add nav link in `src/data/site.json` → `nav` array
 
 ## Conventions
 
-### HTML Structure
-- Semantic sections with ID anchors: `#about`, `#skills`, `#work`
-- BEM-style class naming: `section--intro`, `project__inner`, `page-nav__link`
-- Responsive grid uses `gr-*` and `gr-*@md` breakpoint classes (12-column system)
-- Layout rows: `row row@md` for flexbox-based responsive layouts
+### HTML/Handlebars
+- Use partials for reusable components: `{{> partial-name}}`
+- Access data with: `{{site.property}}`, `{{#each projects}}`
+- Conditional rendering: `{{#if url}}...{{/if}}`
 
-### CSS Grid Pattern
+### CSS/SCSS
+- BEM naming: `block__element--modifier`
+- Mobile-first breakpoints using `@include breakpoint(md)`
+- Available breakpoints: `xxxs`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`
+- Grid classes: `gr-1` to `gr-12`, with breakpoint suffix `gr-6@md`
+
+### JavaScript
+- ES modules with named exports
+- Initialize modules in `main.js`
+- Use `document.querySelector` over jQuery
+
+## Responsive Grid
 ```html
 <div class="row row@md">
-  <div class="gr-12 gr-6@md"><!-- Full width mobile, half on medium+ --></div>
-  <div class="gr-12 gr-6@md"><!-- Full width mobile, half on medium+ --></div>
+  <div class="gr-12 gr-6@md">Half width on desktop</div>
+  <div class="gr-12 gr-6@md">Half width on desktop</div>
 </div>
 ```
 
-### Project Cards Pattern
-Each project follows this structure inside `.projects`:
-```html
-<div class="project project--[name]">
-  <div class="project__inner section">
-    <h5>Project Title</h5>
-    <div class="row row@md">
-      <div class="gr-12 gr-6@md">
-        <p>Description</p>
-        <p><a target="_blank" href="...">link.com</a></p>
-      </div>
-    </div>
-    <img class="project__img" data-action="zoom" src="./images/[name].jpg" alt="...">
-  </div>
-</div>
-```
+## Deployment
+Run `npm run build`, then upload contents of `/dist` folder to any static host (GitHub Pages, Netlify, Vercel, etc.)
 
-### Navigation
-- Mobile hamburger toggle: `.page-nav-toggle` with span elements for burger lines
-- Anchor-based smooth scrolling to section IDs
-- External links use `target="_blank"`
-
-## Development Notes
-
-### Build System
-This appears to be output from a Yeoman Yeogurt generator (see `README.md`). The source files (SASS, unminified JS) are not present - only compiled output. When modifying:
-- Edit `index.html` directly
-- CSS/JS are minified bundles - source modifications require original build setup
-
-### Adding Content
-- **New section**: Add `<section class="section section--[name]" id="[name]">` and corresponding nav link
-- **New project**: Follow the project card pattern within `.projects` container
-- **Images**: Add to `images/` directory, use relative paths with `./images/`
-
-### Responsive Breakpoints
-Grid uses breakpoint suffixes: `@xxxs`, `@xxs`, `@xs`, `@sm`, `@md`, `@lg`
-- Mobile-first approach (no suffix = all sizes)
-- `@md` is primary desktop breakpoint used throughout
+## Legacy Files
+The original compiled files (`index.html`, `styles/main.css`, `scripts/main.js`, `images/`) remain in the root for reference but are no longer used. The new source is in `src/` and builds to `dist/`.

@@ -2,24 +2,44 @@
   "title": "Daniel Fickling",
   "name": "Daniel Fickling",
   "description": "Online Portfolio of Daniel Fickling",
-  "tagline": "Experience & Product Design Lead",
+  "tagline": "Lead Experience & Product Designer",
   "standfirst": "I’m a design leader who brings pragmatic, user-centred thinking to complex digital problems.",
   "email": "dan.fickling@gmail.com",
-  "resumeUrl": "https://docs.google.com/document/d/1xkRZ8o9EPcFbfavO08COqgXi-4ZPbegYm9ZL_kERZHc/edit?usp=sharing",
+  "resumeUrl": "https://docs.google.com/document/d/1xHFDa36t71OqZCGo31mZ6nzsWZszTefB2q_iXM1Yurw/edit?usp=sharing",
   "typekitId": "jlf0psd",
   "googleAnalyticsId": "UA-76752910-1",
   "nav": [
-    { "id": "aboutAnchor", "label": "About", "href": "#about" },
-    { "id": "skillsAnchor", "label": "Skills & Experience", "href": "#skills" },
-    { "id": "workAnchor", "label": "Work", "href": "#work" },
-    { "label": "Email Me", "href": "mailto:dan.fickling@gmail.com", "external": true },
-    { "label": "Download Resume", "href": "https://docs.google.com/document/d/1xkRZ8o9EPcFbfavO08COqgXi-4ZPbegYm9ZL_kERZHc/edit?usp=sharing", "external": true }
+    {
+      "id": "aboutAnchor",
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "id": "skillsAnchor",
+      "label": "Skills & Experience",
+      "href": "#skills"
+    },
+    {
+      "id": "workAnchor",
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "Email Me",
+      "href": "mailto:dan.fickling@gmail.com",
+      "external": true
+    },
+    {
+      "label": "Download Resume",
+      "href": "https://docs.google.com/document/d/1xHFDa36t71OqZCGo31mZ6nzsWZszTefB2q_iXM1Yurw/edit?usp=sharing",
+      "external": true
+    }
   ],
   "about": {
     "paragraph1": "Across enterprise platforms, SaaS products, and consumer brands, I’ve delivered measurable lifts in KPIs, customer satisfaction, and product performance for companies including Serko, Tesco, Virgin Trains, and NatWest.",
     "paragraph2": "Grounded in evidence-based, user-centred design, I balance real user needs with commercial outcomes to create meaningful, scalable impact.",
     "paragraph3": "My lean, evidence-led approach enables teams to move quickly and iterate with purpose, progressing from early experiments to products people genuinely love."
-},
+  },
   "skills": [
     {
       "title": "UX/UI",

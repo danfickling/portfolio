@@ -16,13 +16,8 @@
     },
     {
       "id": "workAnchor",
-      "label": "Work",
+      "label": "Works",
       "href": "#work"
-    },
-    {
-      "label": "Email Me",
-      "href": "mailto:dan.fickling@gmail.com",
-      "external": true
     }
   ],
   "about": {

@@ -1,0 +1,46 @@
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    gap: 0.75rem;
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #333;
+    border-color: #eee;
+}
+
+.btn--white:hover {
+    background-color: #f8f8f8;
+    border-color: #ccc;
+    opacity: 1;
+    /* Override default link hover opacity */
+}
+
+.btn svg {
+    flex-shrink: 0;
+}
+
+/* About Section Buttons Layout */
+.about__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .about__links {
+        align-items: flex-end;
+        margin-top: 0;
+    }
+}

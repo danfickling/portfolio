@@ -63,12 +63,18 @@
         </div>
         <div class="gr-12 gr-6@md">
           <div class="about__links">
-            <a href="https://www.linkedin.com/in/daniel-fickling" target="_blank" class="about__link">
+            <a href="https://www.linkedin.com/in/daniel-fickling" target="_blank" class="btn btn--white about__btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
               <span>LinkedIn</span>
+            </a>
+            <a href="{{site.resumeUrl}}" target="_blank" class="btn btn--white about__btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+              </svg>
+              <span>Download Resume</span>
             </a>
           </div>
         </div>
@@ -80,7 +86,8 @@
         <div class="row row@md">
           <div class="gr-12">
             <h4>{{experience.positions.[0].title}} - {{experience.positions.[0].company}}
-              <span>{{experience.positions.[0].period}}</span></h4>
+              <span>{{experience.positions.[0].period}}</span>
+            </h4>
           </div>
           <div class="gr-12 gr-6@md">
             <h4>Key Achievements</h4>
@@ -114,7 +121,8 @@
         <div class="row row@md">
           <div class="gr-12">
             <h4>{{experience.positions.[1].title}} - {{experience.positions.[1].company}}
-              <span>{{experience.positions.[1].period}}</span></h4>
+              <span>{{experience.positions.[1].period}}</span>
+            </h4>
           </div>
           <div class="gr-12 gr-6@md">
             <div class="gr__inner">
@@ -138,7 +146,8 @@
         <div class="row row@md">
           <div class="gr-12">
             <h4>{{experience.positions.[2].title}} - {{experience.positions.[2].company}}
-              <span>{{experience.positions.[2].period}}</span></h4>
+              <span>{{experience.positions.[2].period}}</span>
+            </h4>
           </div>
           <div class="gr-12 gr-6@md">
             <h4>Key Achievements</h4>

@@ -5,6 +5,7 @@
 
 import '../styles/original.css';
 import '../styles/nav-top.css';
+import '../styles/buttons.css';
 import { initNavigation } from './modules/navigation.js';
 import { initSmoothScroll } from './modules/smooth-scroll.js';
 import { initImageZoom } from './modules/image-zoom.js';

@@ -9,7 +9,7 @@
   padding: $spacing-lg $spacing-sm;
   max-width: $container-max-width;
   margin: 0 auto;
-  
+
   @include breakpoint(md) {
     padding: $spacing-xl $spacing-md;
   }
@@ -18,7 +18,7 @@
 .section__top {
   height: 60px;
   padding: 0;
-  
+
   @include breakpoint(md) {
     height: 80px;
   }
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   @include breakpoint(md) {
     min-height: 70vh;
   }
@@ -38,11 +38,11 @@
 
 .section--intro__titles {
   margin-bottom: $spacing-md;
-  
+
   h1 {
     margin-bottom: $spacing-xs;
   }
-  
+
   h2 {
     color: $color-gray;
   }
@@ -51,7 +51,7 @@
 // About section
 .section--about {
   background-color: $color-white;
-  
+
   h3 {
     margin-bottom: $spacing-md;
   }
@@ -60,15 +60,15 @@
 // Skills section
 .section--skills {
   background-color: darken($color-white, 2%);
-  
+
   h3 {
     margin-bottom: $spacing-md;
   }
-  
+
   h4 {
     margin-top: $spacing-md;
     margin-bottom: $spacing-xs;
-    
+
     &:first-of-type {
       margin-top: 0;
     }
@@ -80,7 +80,7 @@
   h3 {
     margin-bottom: $spacing-md;
   }
-  
+
   h4 {
     margin-bottom: $spacing-xs;
   }
@@ -89,7 +89,7 @@
 // Grid inner helper
 .gr__inner {
   margin-bottom: $spacing-md;
-  
+
   &:last-child {
     margin-bottom: 0;
   }

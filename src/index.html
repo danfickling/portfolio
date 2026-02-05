@@ -2,28 +2,31 @@
 
 <html lang="en" class="no-js">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{site.title}}</title>
-    <meta name="description" content="{{site.description}}">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="https://use.typekit.net/{{site.typekitId}}.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{site.title}}</title>
+  <meta name="description" content="{{site.description}}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://use.typekit.net/{{site.typekitId}}.js"></script>
+  <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
 
-      ga('create', '{{site.googleAnalyticsId}}', 'auto');
-      ga('send', 'pageview');
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    </script>
-  </head>
-  <body>
-    
+    ga('create', '{{site.googleAnalyticsId}}', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+<body>
+
   <div class="page-nav-toggle">
     <span class="page-nav-toggle__top"></span>
     <span class="page-nav-toggle__middle"></span>
@@ -33,7 +36,8 @@
     <nav>
       <ul>
         {{#each site.nav}}
-        <li><a href="{{this.href}}" {{#if this.id}}id="{{this.id}}"{{/if}} {{#if this.external}}target="_blank"{{/if}} class="page-nav__link">{{this.label}}</a></li>
+        <li><a href="{{this.href}}" {{#if this.id}}id="{{this.id}}" {{/if}} {{#if this.external}}target="_blank" {{/if}}
+            class="page-nav__link">{{this.label}}</a></li>
         {{/each}}
       </ul>
     </nav>
@@ -54,21 +58,20 @@
       <div class="row row@md">
         <div class="gr-12 gr-6@md">
           <p>{{site.about.paragraph1}}</p>
-        </div>
-        <div class="gr-12 gr-6@md">
           <p>{{site.about.paragraph2}}</p>
+          <p>{{site.about.paragraph3}}</p>
         </div>
-      </div>
-    </section>
-    <section class="section section--skills" id="skills">
-      <h3>Skills & Expertise</h3>
-      <div class="row row@md">
-        {{#each site.skills}}
         <div class="gr-12 gr-6@md">
-          <h4>{{this.title}}</h4>
-          <p>{{this.description}}</p>
+          <div class="about__links">
+            <a href="https://www.linkedin.com/in/daniel-fickling" target="_blank" class="about__link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </div>
-        {{/each}}
       </div>
     </section>
     <section id="work">
@@ -76,7 +79,8 @@
         <h3>Work</h3>
         <div class="row row@md">
           <div class="gr-12">
-            <h4>{{experience.positions.[0].title}} - {{experience.positions.[0].company}} <span>{{experience.positions.[0].period}}</span></h4>
+            <h4>{{experience.positions.[0].title}} - {{experience.positions.[0].company}}
+              <span>{{experience.positions.[0].period}}</span></h4>
           </div>
           <div class="gr-12 gr-6@md">
             <h4>Key Achievements</h4>
@@ -109,7 +113,8 @@
       <div class="section section--work">
         <div class="row row@md">
           <div class="gr-12">
-            <h4>{{experience.positions.[1].title}} - {{experience.positions.[1].company}} <span>{{experience.positions.[1].period}}</span></h4>
+            <h4>{{experience.positions.[1].title}} - {{experience.positions.[1].company}}
+              <span>{{experience.positions.[1].period}}</span></h4>
           </div>
           <div class="gr-12 gr-6@md">
             <div class="gr__inner">
@@ -122,17 +127,18 @@
             </div>
           </div>
           <div class="gr-12 gr-6@md">
-              <h4>Key Projects</h4>
-              {{#each experience.positions.[1].keyProjects}}
-              <h5>{{this.name}}</h5>
-              <p>{{this.description}}</p>
-              {{/each}}
-              <br>
+            <h4>Key Projects</h4>
+            {{#each experience.positions.[1].keyProjects}}
+            <h5>{{this.name}}</h5>
+            <p>{{this.description}}</p>
+            {{/each}}
+            <br>
           </div>
         </div>
         <div class="row row@md">
           <div class="gr-12">
-            <h4>{{experience.positions.[2].title}} - {{experience.positions.[2].company}} <span>{{experience.positions.[2].period}}</span></h4>
+            <h4>{{experience.positions.[2].title}} - {{experience.positions.[2].company}}
+              <span>{{experience.positions.[2].period}}</span></h4>
           </div>
           <div class="gr-12 gr-6@md">
             <h4>Key Achievements</h4>
@@ -145,9 +151,11 @@
         </div>
       </div>
     </section>
-  
+
 
     <script type="module" src="/js/main.js"></script>
-    
-  </main></body>
+
+  </main>
+</body>
+
 </html>

@@ -10,7 +10,7 @@ export const initStickyImage = () => {
     // Config
     // Config
     const BREAKPOINT = 920;
-    const TOP_PERCENT = 0.25; // 25% of viewport height
+    const TOP_PERCENT = 0.18; // 27% of viewport height
     const MARGIN_ACCOUNT = 32; // Account for margin/delay unsticking
 
     if (!photoContainer || !introSection || !aboutSection) return;

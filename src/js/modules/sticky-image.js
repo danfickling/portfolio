@@ -9,9 +9,8 @@ export const initStickyImage = () => {
 
     // Config
     // Config
-    // Config
     const BREAKPOINT = 920;
-    const TOP_OFFSET = 220; // Aligned with h1 top (approx 280px)
+    const TOP_PERCENT = 0.25; // 25% of viewport height
     const MARGIN_ACCOUNT = 32; // Account for margin/delay unsticking
 
     if (!photoContainer || !introSection || !aboutSection) return;
@@ -53,24 +52,25 @@ export const initStickyImage = () => {
         }
 
         const aboutRect = aboutSection.getBoundingClientRect();
+        const topOffsetPx = window.innerHeight * TOP_PERCENT;
 
         // Logic:
-        // 1. Pinned Phase: About Top <= (270 - 32). Move with About (offset by 32).
-        // 2. Sticky Phase: Always (Fixed at 270).
+        // 1. Pinned Phase: About Top <= (topOffsetPx - 32). Move with About (offset by 32).
+        // 2. Sticky Phase: Always (Fixed at TOP_PERCENT).
 
         // We delay clipping/pushing up by MARGIN_ACCOUNT
-        const unstickPoint = TOP_OFFSET - MARGIN_ACCOUNT;
+        const unstickPoint = topOffsetPx - MARGIN_ACCOUNT;
 
         if (aboutRect.top <= unstickPoint) {
             // PINNED TO ABOUT TOP / SCROLLING AWAY
             enableStickyMode();
-            // To be smooth, at transition point: Top = (TOP_OFFSET - 32) + 32 = TOP_OFFSET
+            // To be smooth, at transition point: Top = (topOffsetPx - 32) + 32 = topOffsetPx
             photoContainer.style.top = `${aboutRect.top + MARGIN_ACCOUNT}px`;
 
         } else {
             // ALWAYS STICKY (Fixed at Top Offset)
             enableStickyMode();
-            photoContainer.style.top = `${TOP_OFFSET}px`;
+            photoContainer.style.top = `${TOP_PERCENT * 100}%`;
         }
     };
 

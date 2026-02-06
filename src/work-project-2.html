@@ -25,7 +25,7 @@
     </script>
 </head>
 
-<body>
+<body class="page--work">
 
     <div class="page-nav-toggle">
         <span class="page-nav-toggle__top"></span>
@@ -35,10 +35,8 @@
     <div class="page-nav" id="page-nav">
         <nav>
             <ul>
-                {{#each site.nav}}
-                <li><a href="{{this.href}}" {{#if this.id}}id="{{this.id}}" {{/if}} {{#if this.external}}target="_blank"
-                        {{/if}} class="page-nav__link">{{this.label}}</a></li>
-                {{/each}}
+                <li><a href="/#about" class="page-nav__link">About</a></li>
+                <li><a href="/#work" class="page-nav__link">Works</a></li>
             </ul>
         </nav>
     </div>
@@ -52,10 +50,10 @@
                 Back to Works
             </a>
 
-            <img src="/images/tangible.jpg" alt="Project Two" class="work-detail__hero">
-
             <h1 class="work-detail__title">Project Two</h1>
             <p class="work-detail__meta">Product Design</p>
+
+            <img src="/images/tangible.jpg" alt="Project Two" class="work-detail__hero">
 
             <div class="work-detail__content">
                 <p>

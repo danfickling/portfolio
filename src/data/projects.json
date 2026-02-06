@@ -23,6 +23,14 @@
       "image": "toast.jpg",
       "alt": "Project Three",
       "page": "/work-project-3.html"
+    },
+    {
+      "id": "other-works",
+      "title": "Other Works",
+      "subtitle": "Earlier Projects",
+      "image": "neveralone.jpg",
+      "alt": "Other Works",
+      "page": "/other-works.html"
     }
   ],
   "otherWorks": [

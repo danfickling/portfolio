@@ -1,19 +1,18 @@
 /* Works Grid Styles */
 
+/* Add spacing between about and works sections */
+#work {
+    margin-top: 4rem;
+}
+
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 2rem 0;
 }
 
-@media (max-width: 992px) {
-    .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .works-grid {
         grid-template-columns: 1fr;
     }
@@ -50,19 +49,20 @@
     transform: scale(1.08);
 }
 
-/* Overlay */
+/* Overlay - stronger gradient for better contrast */
 .work-tile__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top,
-            rgba(0, 0, 0, 0.85) 0%,
-            rgba(0, 0, 0, 0.4) 40%,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.7) 30%,
+            rgba(0, 0, 0, 0.3) 60%,
             rgba(0, 0, 0, 0.1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 1.5rem;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
@@ -76,7 +76,8 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
-    transform: translateY(10px);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+    transform: translateY(0);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -133,14 +134,27 @@
     height: 20px;
 }
 
+/* Work page h1 styled like homepage h2 */
 .work-detail__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    color: #fff;
+    font-family: adelle-sans, sans-serif;
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0 0 0.25em;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 695px) {
+    .work-detail__title {
+        font-size: 100px;
+    }
 }
 
 .work-detail__meta {
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
 }
 
 .work-detail__content {
@@ -150,4 +164,22 @@
 .work-detail__content p {
     font-size: 1.125rem;
     line-height: 1.8;
+}
+
+/* Work page and Other Works page - solid teal background, no animation */
+.page--work .page-content,
+.page--other-works .page-content {
+    background: #5b6d8a;
+}
+
+.page--work .section__top,
+.page--other-works .section__top {
+    background: #5b6d8a !important;
+    animation: none !important;
+}
+
+/* Override header overlay animation for work pages */
+.page--work .section__top::after,
+.page--other-works .section__top::after {
+    display: none !important;
 }

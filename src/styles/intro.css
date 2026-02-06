@@ -1,0 +1,31 @@
+/* Intro section styles */
+.intro-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 
+  Hide on small screens by default to preserve the original layout when no room.
+  Show only when hitting the md breakpoint (920px).
+*/
+.intro-photo-container {
+    display: none;
+}
+
+@media screen and (min-width: 920px) {
+    .intro-photo-container {
+        display: block;
+        padding-top: 2rem;
+        /* Give it some space or align with text */
+    }
+
+    .intro-photo {
+        margin-left: auto;
+        /* Align to right of column */
+        margin-right: 0;
+    }
+}

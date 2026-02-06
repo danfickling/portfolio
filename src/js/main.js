@@ -6,11 +6,14 @@
 import '../styles/original.css';
 import '../styles/nav-top.css';
 import '../styles/buttons.css';
+import '../styles/intro.css';
 import { initNavigation } from './modules/navigation.js';
 import { initSmoothScroll } from './modules/smooth-scroll.js';
 import { initImageZoom } from './modules/image-zoom.js';
 import { initScrollAnimations } from './modules/scroll-animations.js';
 import { initResponsiveState } from './modules/responsive-state.js';
+
+import { initStickyImage } from './modules/sticky-image.js';
 
 // Remove no-js class when JavaScript is loaded
 document.documentElement.classList.remove('no-js');
@@ -24,4 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initImageZoom();
   initScrollAnimations();
+  initStickyImage();
 });

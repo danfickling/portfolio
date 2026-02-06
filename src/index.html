@@ -45,13 +45,20 @@
   <main id="content" class="page-content">
     <div class="section section__top"></div>
     <header class="section section--intro" id="intro">
-      <div class="section--intro__titles">
-        <h1>{{site.name}}</h1>
-        <h2>{{site.tagline}}</h2>
+      <div class="row row@md">
+        <div class="gr-12 gr-8@md">
+          <div class="section--intro__titles">
+            <h1>{{site.name}}</h1>
+            <h2>{{site.tagline}}</h2>
+          </div>
+          <p class="standfirst">
+            {{site.standfirst}}
+          </p>
+        </div>
+        <div class="gr-12 gr-4@md intro-photo-container">
+          <img src="/images/photo.png" alt="Daniel Fickling" class="intro-photo">
+        </div>
       </div>
-      <p class="standfirst">
-        {{site.standfirst}}
-      </p>
     </header>
     <section class="section section--about" id="about">
       <h3>About</h3>
@@ -60,8 +67,6 @@
           <p>{{site.about.paragraph1}}</p>
           <p>{{site.about.paragraph2}}</p>
           <p>{{site.about.paragraph3}}</p>
-        </div>
-        <div class="gr-12 gr-6@md">
           <div class="about__links">
             <a href="https://www.linkedin.com/in/daniel-fickling" target="_blank" class="btn btn--white about__btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

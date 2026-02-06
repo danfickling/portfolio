@@ -89,80 +89,16 @@
     <section id="work">
       <div class="section section--work">
         <h3>Works</h3>
-        <div class="row row@md">
-          <div class="gr-12">
-            <h4>{{experience.positions.[0].title}} - {{experience.positions.[0].company}}
-              <span>{{experience.positions.[0].period}}</span>
-            </h4>
-          </div>
-          <div class="gr-12 gr-6@md">
-            <h4>Key Achievements</h4>
-            <p>{{experience.positions.[0].achievements}}</p>
-          </div>
-          <div class="gr-12 gr-6@md">
-            <h4>Key Responsibilities</h4>
-            <p>{{experience.positions.[0].responsibilities}}</p>
-          </div>
-        </div>
-      </div>
-      <div class="projects">
-        {{#each projects}}
-        <div class="project project--{{this.id}}">
-          <div class="project__inner section">
-            <h5>{{this.title}}</h5>
-            <div class="row row@md">
-              <div class="gr-12 gr-6@md">
-                <p>{{this.description}}</p>
-                {{#if this.url}}
-                <p><a target="_blank" href="{{this.url}}">{{this.urlDisplay}}</a></p>
-                {{/if}}
-              </div>
+        <div class="works-grid">
+          {{#each featuredWorks}}
+          <a href="{{this.page}}" class="work-tile">
+            <img src="/images/{{this.image}}" alt="{{this.alt}}" class="work-tile__image">
+            <div class="work-tile__overlay">
+              <h4 class="work-tile__title">{{this.title}}</h4>
+              <p class="work-tile__subtitle">{{this.subtitle}}</p>
             </div>
-            <img class="project__img" data-action="zoom" src="/images/{{this.image}}" alt="{{this.alt}}">
-          </div>
-        </div>
-        {{/each}}
-      </div>
-      <div class="section section--work">
-        <div class="row row@md">
-          <div class="gr-12">
-            <h4>{{experience.positions.[1].title}} - {{experience.positions.[1].company}}
-              <span>{{experience.positions.[1].period}}</span>
-            </h4>
-          </div>
-          <div class="gr-12 gr-6@md">
-            <div class="gr__inner">
-              <h4>Key Achievements</h4>
-              <p>{{experience.positions.[1].achievements}}</p>
-            </div>
-            <div class="gr__inner">
-              <h4>Key Responsibilities</h4>
-              <p>{{experience.positions.[1].responsibilities}}</p>
-            </div>
-          </div>
-          <div class="gr-12 gr-6@md">
-            <h4>Key Projects</h4>
-            {{#each experience.positions.[1].keyProjects}}
-            <h5>{{this.name}}</h5>
-            <p>{{this.description}}</p>
-            {{/each}}
-            <br>
-          </div>
-        </div>
-        <div class="row row@md">
-          <div class="gr-12">
-            <h4>{{experience.positions.[2].title}} - {{experience.positions.[2].company}}
-              <span>{{experience.positions.[2].period}}</span>
-            </h4>
-          </div>
-          <div class="gr-12 gr-6@md">
-            <h4>Key Achievements</h4>
-            <p>{{experience.positions.[2].achievements}}</p>
-          </div>
-          <div class="gr-12 gr-6@md">
-            <h4>Key Responsibilities</h4>
-            <p>{{experience.positions.[2].responsibilities}}</p>
-          </div>
+          </a>
+          {{/each}}
         </div>
       </div>
     </section>

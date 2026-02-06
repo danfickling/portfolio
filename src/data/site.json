@@ -18,6 +18,20 @@
       "id": "workAnchor",
       "label": "Works",
       "href": "#work"
+    },
+    {
+      "label": "Other Works",
+      "href": "/other-works.html"
+    },
+    {
+      "label": "Email Me",
+      "href": "mailto:dan.fickling@gmail.com",
+      "external": true
+    },
+    {
+      "label": "Download Resume",
+      "href": "https://docs.google.com/document/d/1xHFDa36t71OqZCGo31mZ6nzsWZszTefB2q_iXM1Yurw/edit?usp=sharing",
+      "external": true
     }
   ],
   "about": {

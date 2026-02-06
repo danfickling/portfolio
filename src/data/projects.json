@@ -1,5 +1,31 @@
 {
-  "projects": [
+  "featuredWorks": [
+    {
+      "id": "project-1",
+      "title": "Project One",
+      "subtitle": "UX Design & Strategy",
+      "image": "dish.jpg",
+      "alt": "Project One",
+      "page": "/work-project-1.html"
+    },
+    {
+      "id": "project-2",
+      "title": "Project Two",
+      "subtitle": "Product Design",
+      "image": "tangible.jpg",
+      "alt": "Project Two",
+      "page": "/work-project-2.html"
+    },
+    {
+      "id": "project-3",
+      "title": "Project Three",
+      "subtitle": "Frontend Development",
+      "image": "toast.jpg",
+      "alt": "Project Three",
+      "page": "/work-project-3.html"
+    }
+  ],
+  "otherWorks": [
     {
       "id": "dish",
       "title": "Dish",

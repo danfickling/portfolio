@@ -19,6 +19,7 @@
         opacity: 0;
         transform: translate3d(20%, 0, 0);
     }
+
     to {
         opacity: 1;
         transform: none;
@@ -45,4 +46,18 @@
         /* Align to right of column */
         margin-right: 0;
     }
+}
+
+html {
+    scroll-padding-top: 120px;
+}
+
+/* Disable animations when requested (e.g. on anchor link load) */
+.no-animation .intro-photo,
+.no-animation .section--intro__titles h1,
+.no-animation .section--intro__titles h2,
+.no-animation .section__top,
+.no-animation .standfirst,
+.no-animation .page-nav li {
+    animation: none !important;
 }

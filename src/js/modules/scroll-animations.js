@@ -18,36 +18,43 @@ export function initScrollAnimations() {
   const introSection = document.querySelector('.section--intro');
   const sectionTop = document.querySelector('.section__top');
   const projects = document.querySelectorAll('.project');
-  
+
   // Parallax effect on the top white section
   // Note: .section__top has an initial CSS animation (1s delay + 1.75s duration = 2.75s total)
   if (sectionTop && introSection) {
-    let animationComplete = false;
-    
+    let animationComplete = document.body.classList.contains('no-animation');
+
     const updateParallax = () => {
-      if (!animationComplete) return;
-      
+      // If no-animation is set, we can update immediately or just ensure logic runs
+      if (!animationComplete && !document.body.classList.contains('no-animation')) return;
+
       const rect = introSection.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const duration = viewportHeight * 0.5;
-      
+
       let progress = 0;
       if (rect.top <= 0) {
         progress = Math.min(1, Math.abs(rect.top) / duration);
       }
-      
+
       const translateY = progress * 15;
       sectionTop.style.transform = `translate3d(0, ${translateY}vh, 0)`;
     };
-    
-    setTimeout(() => {
-      animationComplete = true;
+
+    // Only set timeout if we are animating
+    if (!animationComplete) {
+      setTimeout(() => {
+        animationComplete = true;
+        updateParallax();
+      }, 2750);
+    } else {
+      // Initial update if no animation
       updateParallax();
-    }, 2750);
-    
+    }
+
     window.addEventListener('scroll', updateParallax, { passive: true });
   }
-  
+
   // Toggle about-active class when about section reaches 40% of viewport
   // CSS handles all the smooth transitions (background color, opacity changes)
   if (aboutSection && pageContent) {
@@ -55,18 +62,18 @@ export function initScrollAnimations() {
       const rect = aboutSection.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const triggerPoint = viewportHeight * 0.4;
-      
+
       if (rect.top <= triggerPoint) {
         pageContent.classList.add('about-active');
       } else {
         pageContent.classList.remove('about-active');
       }
     };
-    
+
     window.addEventListener('scroll', updateAboutState, { passive: true });
     updateAboutState();
   }
-  
+
   // Add project--active class when projects scroll into view
   projects.forEach(project => {
     ScrollTrigger.create({

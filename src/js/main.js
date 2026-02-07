@@ -19,6 +19,14 @@ import { initStickyImage } from './modules/sticky-image.js';
 // Remove no-js class when JavaScript is loaded
 document.documentElement.classList.remove('no-js');
 
+// Check for hash on load and disable intro animations if present
+if (window.location.hash) {
+  document.body.classList.add('no-animation');
+  // Also force scroll to top to ensure we don't start at 0 and then jump
+  // but actually, we want to let the browser handle the scroll to the anchor.
+  // The no-animation class prevents the transitions that might cause confusion.
+}
+
 // Initialize responsive state immediately (before DOM ready for faster styling)
 initResponsiveState();
 

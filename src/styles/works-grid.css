@@ -167,19 +167,4 @@
 }
 
 /* Work page and Other Works page - solid teal background, no animation */
-.page--work .page-content,
-.page--other-works .page-content {
-    background: #5b6d8a;
-}
-
-.page--work .section__top,
-.page--other-works .section__top {
-    background: #5b6d8a !important;
-    animation: none !important;
-}
-
-/* Override header overlay animation for work pages */
-.page--work .section__top::after,
-.page--other-works .section__top::after {
-    display: none !important;
-}
+/* Page specific styles removed to allow work-detail.css to handle them */

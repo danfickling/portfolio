@@ -1,0 +1,117 @@
+/* Work Detail Page Styles */
+
+/* Header section with teal background */
+.work-detail-header {
+    background-color: #22ffd2;
+    /* Teal color matching homepage */
+    padding-top: 120px;
+    /* Adjust as needed for spacing */
+    padding-bottom: 60px;
+    color: #001772;
+    position: relative;
+    /* Ensure it sits above any other backgrounds */
+    z-index: 10;
+}
+
+.work-detail-header__inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: flex-start;
+    /* Align to the left */
+}
+
+/* Back link styling */
+.work-detail__back {
+    display: inline-flex;
+    align-items: center;
+    color: #001772;
+    text-decoration: none;
+    font-family: "bilo", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 30px;
+    /* Space between link and title */
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.work-detail__back:hover {
+    border-bottom-color: #001772;
+}
+
+.work-detail__back svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    fill: currentColor;
+}
+
+/* Title styling */
+.work-detail__title {
+    font-family: "moret", serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 0 0 10px 0;
+    color: #001772;
+    background: transparent;
+    /* Remove white background */
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.work-detail__meta {
+    font-family: "bilo", sans-serif;
+    font-size: 1.125rem;
+    color: #001772;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Hero image */
+.work-detail__hero {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+
+/* Content section with white background */
+.work-detail-content {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.work-detail-content__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #31161e;
+}
+
+/* Other Works page specific */
+.page--other-works .section--intro {
+    background-color: #22ffd2;
+    color: #001772;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    margin-bottom: 0;
+    /* Remove margin/padding between header and content */
+}
+
+/* Ensure global nav links are visible on teal */
+.page--work .page-nav__link,
+.page--other-works .page-nav__link {
+    color: #001772;
+}
+
+/* Hide original section top on work pages to avoid white flash/conflict */
+.page--work .section__top,
+.page--other-works .section__top {
+    display: none !important;
+}

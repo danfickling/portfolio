@@ -23,6 +23,7 @@
         ga('send', 'pageview');
 
     </script>
+    <link rel="stylesheet" href="/styles/work-detail.css">
 </head>
 
 <body class="page--work">
@@ -42,20 +43,22 @@
     </div>
     <main id="content" class="page-content">
         <div class="section section__top"></div>
-        <section class="section work-detail">
-            <a href="/" class="work-detail__back">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
-                </svg>
-                Back to Works
-            </a>
+        <header class="work-detail-header">
+            <div class="work-detail-header__inner">
+                <a href="/#work" class="work-detail__back">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                    </svg>
+                    Back to Works
+                </a>
+                <h1 class="work-detail__title">Project One</h1>
+                <p class="work-detail__meta">UX Design & Strategy</p>
+                <img src="/images/dish.jpg" alt="Project One" class="work-detail__hero">
+            </div>
+        </header>
 
-            <h1 class="work-detail__title">Project One</h1>
-            <p class="work-detail__meta">UX Design & Strategy</p>
-
-            <img src="/images/dish.jpg" alt="Project One" class="work-detail__hero">
-
-            <div class="work-detail__content">
+        <section class="work-detail-content">
+            <div class="work-detail-content__inner">
                 <p>
                     This is a placeholder for Project One. Replace this content with real case study details about the
                     project, including the challenge, approach, and outcomes.

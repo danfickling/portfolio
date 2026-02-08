@@ -1,33 +1,33 @@
 {
   "featuredWorks": [
     {
-      "id": "project-1",
-      "title": "Project One",
-      "subtitle": "UX Design & Strategy",
-      "image": "dish.jpg",
-      "alt": "Project One",
-      "page": "/work-project-1.html"
+      "id": "booking",
+      "title": "Booking.com for Business",
+      "subtitle": "2021-2025",
+      "image": "booking.jpg",
+      "alt": "Booking.com for Business",
+      "page": "/work-booking.html"
     },
     {
-      "id": "project-2",
-      "title": "Project Two",
-      "subtitle": "Product Design",
-      "image": "tangible.jpg",
-      "alt": "Project Two",
-      "page": "/work-project-2.html"
+      "id": "tesco",
+      "title": "Tesco",
+      "subtitle": "2019-2020",
+      "image": "tesco.jpg",
+      "alt": "Tesco",
+      "page": "/work-tesco.html"
     },
     {
-      "id": "project-3",
-      "title": "Project Three",
-      "subtitle": "Frontend Development",
-      "image": "toast.jpg",
-      "alt": "Project Three",
-      "page": "/work-project-3.html"
+      "id": "virgin-trains",
+      "title": "Virgin Trains",
+      "subtitle": "2017-2018",
+      "image": "virgin-trains.jpg",
+      "alt": "Virgin Trains",
+      "page": "/work-virgin.html"
     },
     {
       "id": "other-works",
       "title": "Other Works",
-      "subtitle": "Earlier Projects",
+      "subtitle": "2010-2016",
       "image": "neveralone.jpg",
       "alt": "Other Works",
       "page": "/other-works.html"

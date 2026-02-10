@@ -52,24 +52,20 @@
 
 /* Title styling */
 .work-detail__title {
-    font-family: "moret", serif;
-    font-weight: 700;
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin: 0 0 10px 0;
     color: #001772;
     background: transparent;
-    /* Remove white background */
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
 .work-detail__meta {
-    font-family: "bilo", sans-serif;
-    font-size: 1.125rem;
     color: #001772;
     margin: 0;
     opacity: 0.8;
+}
+
+.standfirst {
+    color: #001772;
 }
 
 /* Hero image */
@@ -91,7 +87,16 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    color: #31161e;
+}
+
+.page--work .work-detail-content__inner p,
+.page--work .work-detail-content__inner ul li {
+    color: #111 !important;
+}
+
+.work-detail-content__inner a {
+    color: #001772;
+    text-decoration: underline;
 }
 
 /* Other Works page specific */
@@ -101,7 +106,6 @@
     padding-top: 120px;
     padding-bottom: 60px;
     margin-bottom: 0;
-    /* Remove margin/padding between header and content */
 }
 
 /* Ensure global nav links are visible on teal */
@@ -110,8 +114,11 @@
     color: #001772;
 }
 
-/* Hide original section top on work pages to avoid white flash/conflict */
-.page--work .section__top,
-.page--other-works .section__top {
-    display: none !important;
+/* Disable animations only on the heading section of work pages */
+.page--work .work-detail-header,
+.page--work .work-detail-header *,
+.page--other-works .work-detail-header,
+.page--other-works .work-detail-header * {
+    animation: none !important;
+    transition: none !important;
 }

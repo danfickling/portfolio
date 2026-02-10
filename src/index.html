@@ -27,21 +27,7 @@
 
 <body>
 
-  <div class="page-nav-toggle">
-    <span class="page-nav-toggle__top"></span>
-    <span class="page-nav-toggle__middle"></span>
-    <span class="page-nav-toggle__bottom"></span>
-  </div>
-  <div class="page-nav" id="page-nav">
-    <nav>
-      <ul>
-        {{#each site.nav}}
-        <li><a href="{{this.href}}" {{#if this.id}}id="{{this.id}}" {{/if}} {{#if this.external}}target="_blank" {{/if}}
-            class="page-nav__link">{{this.label}}</a></li>
-        {{/each}}
-      </ul>
-    </nav>
-  </div>
+
   <main id="content" class="page-content">
     <div class="section section__top"></div>
     <header class="section section--intro" id="intro">

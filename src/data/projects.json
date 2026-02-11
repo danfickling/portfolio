@@ -4,7 +4,7 @@
       "id": "booking",
       "title": "Booking.com for Business",
       "subtitle": "2021-2025",
-      "image": "booking.jpg",
+      "image": "booking-hero.jpg",
       "alt": "Booking.com for Business",
       "page": "/work-booking.html"
     },
@@ -12,7 +12,7 @@
       "id": "tesco",
       "title": "Tesco",
       "subtitle": "2019-2020",
-      "image": "tesco.jpg",
+      "image": "tesco-hero.jpg",
       "alt": "Tesco",
       "page": "/work-tesco.html"
     },
@@ -20,7 +20,7 @@
       "id": "virgin-trains",
       "title": "Virgin Trains",
       "subtitle": "2017-2018",
-      "image": "virgin-trains.jpg",
+      "image": "vt-hero.jpg",
       "alt": "Virgin Trains",
       "page": "/work-virgin.html"
     },
@@ -38,7 +38,7 @@
       "id": "dish",
       "title": "Dish",
       "description": "Worked closely with internal publishing team to understand audience and business requirements. Collaboratively worked on IA structure, wireframes, user-flows and facilitated Art Director in design. Worked with other frontend developers to implement frontend of site.",
-      "url": "http://www.dish.co.nz/",
+      "url": "https://web.archive.org/web/20160110165614/http://www.dish.co.nz/",
       "urlDisplay": "dish.co.nz",
       "image": "dish.jpg",
       "alt": "Dish Website"
@@ -47,7 +47,7 @@
       "id": "tangible",
       "title": "Tangible Media",
       "description": "Contributed to developing wireframes of the purchase flow and account management sections of the Tangible SMS, with careful attention to allowing ease of use while ensuring compatibility for multiple scenarios of purchase and subscription management by customers. Designed the frontend of the site.",
-      "url": "http://www.tangiblemedia.co.nz/",
+      "url": "https://web.archive.org/web/20130731092220/http://www.tangiblemedia.co.nz/",
       "urlDisplay": "tangiblemedia.co.nz",
       "image": "tangible.jpg",
       "alt": "Tangible Media Website"
@@ -56,7 +56,7 @@
       "id": "toast",
       "title": "Toast",
       "description": "Worked with internal publishing team to redevelop existing Toast website to align with new branding, while introducing improved linking to parent Liquorland website. Created wireframes, HTML prototype, designed and built frontend.",
-      "url": "http://www.toastmag.co.nz/",
+      "url": "https://web.archive.org/web/20160122190400/http://www.toastmag.co.nz/",
       "urlDisplay": "toastmag.co.nz",
       "image": "toast.jpg",
       "alt": "Toast Magazine Website"
@@ -83,7 +83,7 @@
       "id": "eurotech",
       "title": "Eurotech",
       "description": "Worked with product owner on site requirements. Wireframed, designed and built frontend.",
-      "url": "http://www.eurotechdesign.co.nz/",
+      "url": "https://web.archive.org/web/20150121204020/http://www.eurotechdesign.co.nz/",
       "urlDisplay": "eurotechdesign.co.nz",
       "image": "eurotech.jpg",
       "alt": "Eurotech Website"

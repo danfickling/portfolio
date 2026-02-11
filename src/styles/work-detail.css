@@ -1,4 +1,9 @@
 /* Work Detail Page Styles */
+.page--work .page-content,
+.page--other-works .page-content {
+    background: #fff;
+    padding-top: 0 !important;
+}
 
 /* Header section with teal background */
 .work-detail-header {
@@ -14,14 +19,24 @@
 }
 
 .work-detail-header__inner {
-    max-width: 1060px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px;
     display: flex;
     flex-direction: column;
     /* Stack children vertically */
     align-items: flex-start;
     /* Align to the left */
+}
+
+@media screen and (min-width: 695px) {
+    .work-detail-header__inner {
+        padding: 0 50px;
+    }
+}
+
+.standfirst {
+    margin-top: 0.25em;
 }
 
 /* Back link styling */
@@ -50,12 +65,24 @@
     fill: currentColor;
 }
 
-/* Title styling */
+/* Title styling - matches homepage h2 */
 .work-detail__title {
     color: #001772;
+    font-family: adelle-sans, sans-serif;
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0 0 0.05em;
+    text-transform: uppercase;
     background: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+@media screen and (min-width: 695px) {
+    .work-detail__title {
+        font-size: 100px;
+    }
 }
 
 .work-detail__meta {
@@ -84,9 +111,15 @@
 }
 
 .work-detail-content__inner {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px;
+}
+
+@media screen and (min-width: 695px) {
+    .work-detail-content__inner {
+        padding: 0 50px;
+    }
 }
 
 .page--work .work-detail-content__inner p,

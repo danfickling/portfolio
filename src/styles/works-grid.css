@@ -74,7 +74,7 @@
 .work-tile__title {
     color: #fff;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 300;
     margin: 0;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
     transform: translateY(0);
@@ -89,6 +89,7 @@
 .work-tile__subtitle {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
+    font-weight: 300;
     margin: 0.5rem 0 0;
     opacity: 0;
     transform: translateY(10px);

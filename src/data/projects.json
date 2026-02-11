@@ -4,7 +4,7 @@
       "id": "booking",
       "title": "Booking.com for Business",
       "subtitle": "2021-2025",
-      "image": "booking-hero.jpg",
+      "image": "booking-hero.png",
       "alt": "Booking.com for Business",
       "page": "/work-booking.html"
     },
@@ -20,7 +20,7 @@
       "id": "virgin-trains",
       "title": "Virgin Trains",
       "subtitle": "2017-2018",
-      "image": "vt-hero.jpg",
+      "image": "vt-hero.png",
       "alt": "Virgin Trains",
       "page": "/work-virgin.html"
     },

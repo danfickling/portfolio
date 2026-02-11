@@ -3,16 +3,9 @@
  * Uses modern ES modules, no jQuery dependency
  */
 
-import '../styles/original.css';
-
-import '../styles/buttons.css';
-import '../styles/intro.css';
-import '../styles/works-grid.css';
-
 import { initSmoothScroll } from './modules/smooth-scroll.js';
 import { initImageZoom } from './modules/image-zoom.js';
 import { initScrollAnimations } from './modules/scroll-animations.js';
-import { initResponsiveState } from './modules/responsive-state.js';
 
 import { initStickyImage } from './modules/sticky-image.js';
 
@@ -26,9 +19,6 @@ if (window.location.hash) {
   // but actually, we want to let the browser handle the scroll to the anchor.
   // The no-animation class prevents the transitions that might cause confusion.
 }
-
-// Initialize responsive state immediately (before DOM ready for faster styling)
-initResponsiveState();
 
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

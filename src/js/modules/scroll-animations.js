@@ -83,4 +83,31 @@ export function initScrollAnimations() {
       onEnter: () => project.classList.add('project--active')
     });
   });
+
+  // Check for hash on load to set initial state without transition
+  if (window.location.hash && aboutSection && pageContent) {
+    // Temporarily disable transition
+    pageContent.style.transition = 'none';
+
+    // Force check of about state
+    const updateAboutState = () => {
+      const rect = aboutSection.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const triggerPoint = viewportHeight * 0.4;
+
+      if (rect.top <= triggerPoint) {
+        pageContent.classList.add('about-active');
+      } else {
+        pageContent.classList.remove('about-active');
+      }
+    };
+    updateAboutState();
+
+    // Re-enable transition after a brief delay to allow CSS to take over
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        pageContent.style.transition = '';
+      }, 100);
+    });
+  }
 }

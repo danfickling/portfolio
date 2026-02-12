@@ -1,3 +1,16 @@
+/* Typekit Font Loading State */
+.wf-loading body {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.wf-active body,
+.wf-inactive body {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out;
+}
+
 /* Intro section styles */
 .intro-photo {
     width: 100%;

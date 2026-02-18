@@ -102,6 +102,47 @@
     display: block;
     margin-top: 40px;
     border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Introduction Grid */
+.work-detail__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+@media screen and (min-width: 768px) {
+    .work-detail__intro {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.work-detail__intro-item h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.work-detail__intro-item p,
+.work-detail__intro-item ul {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.work-detail__intro-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.work-detail__intro-item ul li {
+    margin-bottom: 5px;
 }
 
 /* Content section with white background */
@@ -123,8 +164,57 @@
 }
 
 .page--work .work-detail-content__inner p,
-.page--work .work-detail-content__inner ul li {
-    color: #111 !important;
+.page--work .work-detail-content__inner ul li,
+.page--work .work-detail-content__inner ol li {
+    color: #333 !important;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    max-width: 800px;
+}
+
+.page--work .work-detail-content__inner h2 {
+    font-family: adelle-sans, sans-serif;
+    font-size: 32px;
+    color: #111;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.page--work .work-detail-content__inner h3 {
+    font-family: adelle-sans, sans-serif;
+    font-size: 24px;
+    color: #111;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* Figures and Images in content */
+.work-detail-content__inner figure {
+    margin: 40px 0;
+    width: 100%;
+}
+
+.work-detail-content__inner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.work-detail-content__inner figcaption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+.work-detail-content__inner ul,
+.work-detail-content__inner ol {
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+    max-width: 800px;
 }
 
 .work-detail-content__inner a {

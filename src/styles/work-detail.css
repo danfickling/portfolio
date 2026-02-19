@@ -11,7 +11,7 @@
     /* Teal color matching homepage */
     padding-top: 120px;
     /* Adjust as needed for spacing */
-    padding-bottom: 60px;
+    padding-bottom: 0px;
     color: #001772;
     position: relative;
     /* Ensure it sits above any other backgrounds */
@@ -101,7 +101,11 @@
     height: auto;
     display: block;
     margin-top: 40px;
+    margin-bottom: -20%;
     border-radius: 4px;
+    /* Straddle the sections */
+    position: relative;
+    z-index: 20;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -121,12 +125,14 @@
     }
 }
 
-.work-detail__intro-item h3 {
+.page--work .work-detail__intro-item h3 {
+    font-family: "stevie-sans", sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #888;
     margin-bottom: 10px;
+    font-weight: 600 !important;
 }
 
 .work-detail__intro-item p,
@@ -148,7 +154,7 @@
 /* Content section with white background */
 .work-detail-content {
     background-color: #ffffff;
-    padding: 80px 0;
+    padding: 20% 0 80px;
 }
 
 .work-detail-content__inner {
@@ -163,27 +169,36 @@
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .work-detail-content {
+        padding-top: 240px;
+    }
+}
+
 .page--work .work-detail-content__inner p,
 .page--work .work-detail-content__inner ul li,
 .page--work .work-detail-content__inner ol li {
     color: #333 !important;
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
+    /* Reduced from 1.5em */
     max-width: 800px;
 }
 
 .page--work .work-detail-content__inner h2 {
-    font-family: adelle-sans, sans-serif;
+    font-family: "stevie-sans", sans-serif;
     font-size: 32px;
     color: #111;
     margin-top: 60px;
     margin-bottom: 20px;
+    text-transform: none;
 }
 
 .page--work .work-detail-content__inner h3 {
-    font-family: adelle-sans, sans-serif;
+    font-family: "stevie-sans", sans-serif;
     font-size: 24px;
+    font-weight: 400;
     color: #111;
     margin-top: 40px;
     margin-bottom: 15px;
@@ -196,7 +211,7 @@
 }
 
 .work-detail-content__inner img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);

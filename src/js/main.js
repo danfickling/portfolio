@@ -8,6 +8,7 @@ import { initImageZoom } from './modules/image-zoom.js';
 import { initScrollAnimations } from './modules/scroll-animations.js';
 
 import { initStickyImage } from './modules/sticky-image.js';
+import { initCarousel } from './modules/carousel.js';
 
 // Remove no-js class when JavaScript is loaded
 document.documentElement.classList.remove('no-js');
@@ -27,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initImageZoom();
   initScrollAnimations();
   initStickyImage();
+  initCarousel();
 });

@@ -225,6 +225,196 @@
     font-style: italic;
 }
 
+/* Image Carousel */
+.image-carousel {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 25px;
+    /* Alignment for snapping */
+    gap: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+}
+
+@media screen and (min-width: 695px) {
+    .image-carousel {
+        padding-left: 50px;
+        padding-right: 50px;
+        scroll-padding-left: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .image-carousel {
+        padding-left: calc((100vw - 1200px) / 2 + 50px);
+        padding-right: calc((100vw - 1200px) / 2 + 50px);
+        scroll-padding-left: calc((100vw - 1200px) / 2 + 50px);
+    }
+}
+
+.image-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.image-carousel figure {
+    margin: 0 !important;
+    /* Width matches the full content area (max 1200px) */
+    flex: 0 0 calc(100vw - 50px);
+    max-width: 1200px;
+    scroll-snap-align: start;
+    position: relative;
+    opacity: 0.25;
+    transition: opacity 0.3s ease;
+}
+
+@media screen and (min-width: 695px) {
+    .image-carousel figure {
+        flex: 0 0 calc(100vw - 100px);
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .image-carousel figure {
+        flex: 0 0 1200px;
+    }
+}
+
+.image-carousel figure.is-active {
+    opacity: 1;
+}
+
+/* Single image case (not a carousel) */
+.image-carousel.is-single {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+    display: block;
+    overflow: visible;
+    cursor: default !important;
+}
+
+.image-carousel.is-single figure {
+    flex: none;
+    max-width: 100%;
+    opacity: 1;
+    margin-bottom: 40px !important;
+}
+
+.image-carousel figcaption {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-carousel figure.is-active figcaption {
+    opacity: 1;
+}
+
+/* Custom Cursor styling */
+body>.carousel-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+}
+
+body>.carousel-cursor svg {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    /* Adjust for visual centering */
+    left: 2px;
+    transition: transform 0.3s ease;
+    stroke: black;
+    /* User requested Black */
+    color: black;
+}
+
+body>.carousel-cursor.is-active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+body>.carousel-cursor.is-prev svg {
+    transform: rotate(180deg);
+    left: -2px;
+    /* adjust inverse */
+}
+
+/* Fallback visible arrow for non-mouse devices */
+.carousel-fallback-arrow {
+    display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .image-carousel-wrapper {
+        position: relative;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    .carousel-fallback-arrow {
+        display: flex;
+        position: absolute;
+        /* Positioned inside the content area right edge on larger screens */
+        right: 25px;
+        top: 40%;
+        /* Slightly above middle to clear middle horizontal line usually */
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        cursor: pointer;
+        border: none;
+        pointer-events: auto;
+    }
+
+    @media screen and (min-width: 695px) {
+        .carousel-fallback-arrow {
+            right: 50px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .carousel-fallback-arrow {
+            /* Align with the right edge of the content container */
+            right: calc((100vw - 1200px) / 2 + 50px);
+        }
+    }
+
+    .carousel-fallback-arrow svg {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: 2px;
+    }
+}
+
 .work-detail-content__inner ul,
 .work-detail-content__inner ol {
     margin-bottom: 1.5em;

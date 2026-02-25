@@ -38,7 +38,23 @@ export function initCarousel() {
 
         // SINGLE IMAGE CASE: If only one image exists, treat it as a regular block
         if (figures.length <= 1) {
+            console.log('Found single carousel', carousel, 'figures:', figures.length);
             carousel.classList.add('is-single');
+
+            // Check aspect ratio for wide single images
+            const img = carousel.querySelector('img');
+            if (img) {
+                const checkWideImage = () => {
+                    if (img.naturalWidth / img.naturalHeight > 2) {
+                        carousel.classList.add('is-image-wide');
+                    }
+                };
+                if (img.complete) {
+                    checkWideImage();
+                } else {
+                    img.addEventListener('load', checkWideImage);
+                }
+            }
             return;
         }
 
@@ -75,15 +91,32 @@ export function initCarousel() {
             let canGoNext = true;
 
             const checkEdges = () => {
-                // Precision edge detection with 2px tolerance
-                canGoPrev = carousel.scrollLeft > 2;
-                canGoNext = Math.ceil(carousel.scrollLeft + carousel.clientWidth) < carousel.scrollWidth - 2;
+                const rect = carousel.getBoundingClientRect();
+                const firstFigure = figures[0];
+                const lastFigure = figures[figures.length - 1];
+
+                if (!firstFigure || !lastFigure) {
+                    canGoPrev = false;
+                    canGoNext = false;
+                    return;
+                }
+
+                const firstRect = firstFigure.getBoundingClientRect();
+                const lastRect = lastFigure.getBoundingClientRect();
+
+                // If the first figure's left edge is to the right of the carousel's left edge, we're at the start
+                // We use a small tolerance (2px) to handle subpixel issues
+                canGoPrev = firstRect.left < rect.left - 2;
+
+                // If the last figure's right edge is to the left of the carousel's right edge, we're at the end
+                canGoNext = lastRect.right > rect.right + 2;
             };
 
             carousel.addEventListener('scroll', checkEdges);
             checkEdges();
 
             carousel.addEventListener('mouseenter', () => {
+                checkEdges(); // Refresh on enter
                 cursor.classList.add('is-active');
             });
 
@@ -94,6 +127,7 @@ export function initCarousel() {
             });
 
             carousel.addEventListener('mousemove', (e) => {
+                checkEdges(); // Ensure state is fresh
                 const rect = carousel.getBoundingClientRect();
                 const xInCarousel = e.clientX - rect.left;
 

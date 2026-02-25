@@ -111,8 +111,8 @@
 
 /* Introduction Grid */
 .work-detail__intro {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     margin-bottom: 60px;
     padding-bottom: 60px;
@@ -121,7 +121,13 @@
 
 @media screen and (min-width: 768px) {
     .work-detail__intro {
-        grid-template-columns: repeat(4, 1fr);
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .work-detail__intro-item {
+        flex: 1;
     }
 }
 
@@ -148,7 +154,20 @@
 }
 
 .work-detail__intro-item ul li {
-    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.work-detail__intro-item ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    border-radius: 50%;
 }
 
 /* Content section with white background */
@@ -181,8 +200,8 @@
     color: #333 !important;
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 0.5em;
-    /* Reduced from 1.5em */
+    margin-bottom: 0.3em;
+    /* Reduced further from 0.5em */
     max-width: 800px;
 }
 
@@ -191,7 +210,7 @@
     font-size: 32px;
     color: #111;
     margin-top: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: none;
 }
 
@@ -201,7 +220,7 @@
     font-weight: 400;
     color: #111;
     margin-top: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Figures and Images in content */
@@ -220,7 +239,8 @@
 .work-detail-content__inner figcaption {
     font-size: 14px;
     color: #666;
-    margin-top: 10px;
+    margin-top: 15px;
+    /* Increased for better separation from frame */
     text-align: center;
     font-style: italic;
 }
@@ -274,6 +294,35 @@
     position: relative;
     opacity: 0.25;
     transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image wrapper to maintain consistent 1200x800 aspect ratio */
+.image-carousel .image-wrapper {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    background-color: #f5f5f5;
+    /* Light background for the frame */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.image-carousel figure img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    /* Let the wrapper handle border radius if desired, or keep it on the image */
+    box-shadow: none;
+    /* Shadow moved to wrapper */
+    display: block;
 }
 
 @media screen and (min-width: 695px) {
@@ -300,6 +349,22 @@
     display: block;
     overflow: visible;
     cursor: default !important;
+}
+
+.image-carousel.is-single.is-image-wide .image-wrapper {
+    aspect-ratio: auto;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    height: auto;
+}
+
+.image-carousel.is-single.is-image-wide img {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
 }
 
 .image-carousel.is-single figure {
@@ -417,6 +482,7 @@ body>.carousel-cursor.is-prev svg {
 
 .work-detail-content__inner ul,
 .work-detail-content__inner ol {
+    margin-top: 0;
     margin-bottom: 1.5em;
     padding-left: 20px;
     max-width: 800px;

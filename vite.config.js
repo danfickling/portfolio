@@ -41,6 +41,7 @@ const dataReloadPlugin = () => ({
 });
 
 export default defineConfig({
+  base: '/portfolio/',
   root: 'src',
   publicDir: '../public',
   build: {

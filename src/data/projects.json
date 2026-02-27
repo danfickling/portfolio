@@ -6,7 +6,7 @@
       "subtitle": "2021-2025",
       "image": "booking-hero.png",
       "alt": "Booking.com for Business",
-      "page": "/work-booking.html"
+      "page": "/portfolio/work-booking.html"
     },
     {
       "id": "tesco",
@@ -14,7 +14,7 @@
       "subtitle": "2019-2020",
       "image": "tesco-hero.jpg",
       "alt": "Tesco",
-      "page": "/work-tesco.html"
+      "page": "/portfolio/work-tesco.html"
     },
     {
       "id": "virgin-trains",
@@ -22,15 +22,15 @@
       "subtitle": "2017-2018",
       "image": "vt-hero.png",
       "alt": "Virgin Trains",
-      "page": "/work-virgin.html"
+      "page": "/portfolio/work-virgin.html"
     },
     {
-      "id": "other-works",
+      "id": "work-other",
       "title": "Other Works",
       "subtitle": "2010-2016",
       "image": "neveralone.jpg",
       "alt": "Other Works",
-      "page": "/other-works.html"
+      "page": "/portfolio/work-other.html"
     }
   ],
   "otherWorks": [

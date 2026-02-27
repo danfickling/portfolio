@@ -14,24 +14,7 @@ export function initCarousel() {
     const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
     // 2. Intersection Observer for Active Figure (Captions and Opacity)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.6
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const carousel = entry.target.closest('.image-carousel');
-                if (!carousel) return;
-
-                const siblings = carousel.querySelectorAll('figure');
-                siblings.forEach(sibling => sibling.classList.remove('is-active'));
-                entry.target.classList.add('is-active');
-            }
-        });
-    }, observerOptions);
+    // Observer is set up per-carousel so images fade in based on carousel scroll position
 
     carousels.forEach(carousel => {
         const figures = carousel.querySelectorAll('figure');
@@ -58,8 +41,22 @@ export function initCarousel() {
             return;
         }
 
-        // Setup observer for each figure
-        figures.forEach(figure => observer.observe(figure));
+        // Setup observer for each figure, relative to the carousel viewport
+        const carouselObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const siblings = carousel.querySelectorAll('figure');
+                    siblings.forEach(sibling => sibling.classList.remove('is-active'));
+                    entry.target.classList.add('is-active');
+                }
+            });
+        }, {
+            root: carousel,
+            rootMargin: '0px',
+            threshold: 0.6
+        });
+
+        figures.forEach(figure => carouselObserver.observe(figure));
 
         if (isTouchDevice) {
             // Touch device logic
@@ -89,6 +86,21 @@ export function initCarousel() {
             // Mouse events for custom cursor with edge detection
             let canGoPrev = false;
             let canGoNext = true;
+            let currentIsLeftHalf = false;
+            let isMouseInside = false;
+
+            const updateCursorVisibility = () => {
+                if (!isMouseInside) return;
+                const shouldShowArrow = (currentIsLeftHalf && canGoPrev) || (!currentIsLeftHalf && canGoNext);
+
+                if (shouldShowArrow) {
+                    cursor.style.opacity = '1';
+                    carousel.style.cursor = 'none'; // Hide system cursor
+                } else {
+                    cursor.style.opacity = '0';
+                    carousel.style.cursor = 'default'; // Show system cursor
+                }
+            };
 
             const checkEdges = () => {
                 const rect = carousel.getBoundingClientRect();
@@ -98,58 +110,54 @@ export function initCarousel() {
                 if (!firstFigure || !lastFigure) {
                     canGoPrev = false;
                     canGoNext = false;
-                    return;
+                } else {
+                    const firstRect = firstFigure.getBoundingClientRect();
+                    const lastRect = lastFigure.getBoundingClientRect();
+
+                    // If the first figure's left edge is to the right of the carousel's left edge, we're at the start
+                    // We use a small tolerance (2px) to handle subpixel issues
+                    canGoPrev = firstRect.left < rect.left - 2;
+
+                    // If the last figure's right edge is to the left of the carousel's right edge, we're at the end
+                    canGoNext = lastRect.right > rect.right + 2;
                 }
 
-                const firstRect = firstFigure.getBoundingClientRect();
-                const lastRect = lastFigure.getBoundingClientRect();
-
-                // If the first figure's left edge is to the right of the carousel's left edge, we're at the start
-                // We use a small tolerance (2px) to handle subpixel issues
-                canGoPrev = firstRect.left < rect.left - 2;
-
-                // If the last figure's right edge is to the left of the carousel's right edge, we're at the end
-                canGoNext = lastRect.right > rect.right + 2;
+                updateCursorVisibility();
             };
 
             carousel.addEventListener('scroll', checkEdges);
             checkEdges();
 
             carousel.addEventListener('mouseenter', () => {
+                isMouseInside = true;
                 checkEdges(); // Refresh on enter
                 cursor.classList.add('is-active');
             });
 
             carousel.addEventListener('mouseleave', () => {
+                isMouseInside = false;
                 cursor.classList.remove('is-active');
                 cursor.style.opacity = '0';
                 carousel.style.cursor = 'default';
             });
 
             carousel.addEventListener('mousemove', (e) => {
-                checkEdges(); // Ensure state is fresh
+                isMouseInside = true;
                 const rect = carousel.getBoundingClientRect();
                 const xInCarousel = e.clientX - rect.left;
 
                 cursor.style.top = `${e.clientY}px`;
                 cursor.style.left = `${e.clientX}px`;
 
-                const isLeftHalf = xInCarousel < rect.width / 2;
-                const shouldShowArrow = (isLeftHalf && canGoPrev) || (!isLeftHalf && canGoNext);
+                currentIsLeftHalf = xInCarousel < rect.width / 2;
 
-                if (isLeftHalf) {
+                if (currentIsLeftHalf) {
                     cursor.classList.add('is-prev');
                 } else {
                     cursor.classList.remove('is-prev');
                 }
 
-                if (shouldShowArrow) {
-                    cursor.style.opacity = '1';
-                    carousel.style.cursor = 'none'; // Hide system cursor
-                } else {
-                    cursor.style.opacity = '0';
-                    carousel.style.cursor = 'default'; // Show system cursor
-                }
+                checkEdges(); // Ensure state is fresh and updates visibility
             });
 
             carousel.addEventListener('click', (e) => {

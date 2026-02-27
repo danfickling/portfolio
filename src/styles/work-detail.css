@@ -1,6 +1,6 @@
 /* Work Detail Page Styles */
 .page--work .page-content,
-.page--other-works .page-content {
+.page--work-other .page-content {
     background: #fff;
     padding-top: 0 !important;
 }
@@ -9,13 +9,20 @@
 .work-detail-header {
     background-color: #22ffd2;
     /* Teal color matching homepage */
-    padding-top: 120px;
-    /* Adjust as needed for spacing */
+    padding-top: 40px;
+    /* 40px on mobile */
     padding-bottom: 0px;
     color: #001772;
     position: relative;
     /* Ensure it sits above any other backgrounds */
     z-index: 10;
+}
+
+@media screen and (min-width: 695px) {
+    .work-detail-header {
+        padding-top: 120px;
+        /* 120px on desktop */
+    }
 }
 
 .work-detail-header__inner {
@@ -37,6 +44,7 @@
 
 .standfirst {
     margin-top: 0.25em;
+    margin-bottom: 2em;
 }
 
 /* Back link styling */
@@ -91,16 +99,11 @@
     opacity: 0.8;
 }
 
-.standfirst {
-    color: #001772;
-}
-
 /* Hero image */
 .work-detail__hero {
     width: 100%;
     height: auto;
     display: block;
-    margin-top: 40px;
     margin-bottom: -20%;
     border-radius: 4px;
     /* Straddle the sections */
@@ -141,33 +144,14 @@
     font-weight: 600 !important;
 }
 
-.work-detail__intro-item p,
-.work-detail__intro-item ul {
+.work-detail__intro-item p {
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
 }
 
-.work-detail__intro-item ul {
-    list-style: none;
-    padding: 0;
-}
-
-.work-detail__intro-item ul li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-}
-
-.work-detail__intro-item ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.6em;
-    width: 6px;
-    height: 6px;
-    background-color: currentColor;
-    border-radius: 50%;
+.work-detail__intro .work-detail__intro-item ul {
+    margin-bottom: 0;
 }
 
 /* Content section with white background */
@@ -379,7 +363,8 @@
     transition: opacity 0.3s ease;
 }
 
-.image-carousel figure.is-active figcaption {
+.image-carousel figure.is-active figcaption,
+.image-carousel.is-single figcaption {
     opacity: 1;
 }
 
@@ -481,11 +466,16 @@ body>.carousel-cursor.is-prev svg {
 }
 
 .work-detail-content__inner ul,
-.work-detail-content__inner ol {
+.work-detail-content__inner ol,
+{
+margin-top: 0;
+margin-bottom: 2em;
+padding-left: 20px;
+max-width: 800px;
+}
+
+.work-detail-content__inner p+ul {
     margin-top: 0;
-    margin-bottom: 1.5em;
-    padding-left: 20px;
-    max-width: 800px;
 }
 
 .work-detail-content__inner a {
@@ -494,7 +484,7 @@ body>.carousel-cursor.is-prev svg {
 }
 
 /* Other Works page specific */
-.page--other-works .section--intro {
+.page--work-other .section--intro {
     background-color: #22ffd2;
     color: #001772;
     padding-top: 120px;
@@ -504,15 +494,15 @@ body>.carousel-cursor.is-prev svg {
 
 /* Ensure global nav links are visible on teal */
 .page--work .page-nav__link,
-.page--other-works .page-nav__link {
+.page--work-other .page-nav__link {
     color: #001772;
 }
 
 /* Disable animations only on the heading section of work pages */
 .page--work .work-detail-header,
 .page--work .work-detail-header *,
-.page--other-works .work-detail-header,
-.page--other-works .work-detail-header * {
+.page--work-other .work-detail-header,
+.page--work-other .work-detail-header * {
     animation: none !important;
     transition: none !important;
 }

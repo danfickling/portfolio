@@ -19,10 +19,8 @@ const getHtmlInputs = () => {
 const loadData = () => {
   const projectsData = JSON.parse(fs.readFileSync('./src/data/projects.json', 'utf-8'));
   return {
-    site: JSON.parse(fs.readFileSync('./src/data/site.json', 'utf-8')),
     featuredWorks: projectsData.featuredWorks,
     otherWorks: projectsData.otherWorks,
-    experience: JSON.parse(fs.readFileSync('./src/data/experience.json', 'utf-8')),
   };
 };
 

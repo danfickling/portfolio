@@ -16389,7 +16389,7 @@ img {
 }
 
 .page-content.about-active {
-  background: #434f66;
+  background: #f8f9fc;
 }
 
 .page-content.about-active .section--about,
@@ -16400,6 +16400,18 @@ img {
 .page-content.about-active .standfirst,
 .page-content.about-active h2 {
   opacity: 0;
+}
+
+.page-content.about-active h3 {
+  color: #001772;
+}
+
+.page-content.about-active h3:before {
+  border-bottom-color: #001772;
+}
+
+.page-content.about-active p {
+  color: #434f66;
 }
 
 .state-sm .page-content {

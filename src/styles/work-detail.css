@@ -157,8 +157,23 @@
 /* Content section with white background */
 .work-detail-content {
     background-color: #ffffff;
-    padding: 20% 0 80px;
+    padding: 20% 0 0;
 }
+
+/* Numbered step sections with alternating backgrounds */
+.work-detail-step {
+    padding: 20px 0 50px;
+}
+
+.work-detail-step h3:first-child {
+    margin-top: 0;
+}
+
+.work-detail-step--1 { background-color: #ffffff; padding-top: 0; }
+.work-detail-step--2 { background-color: #f8f9fc; }
+.work-detail-step--3 { background-color: #ffffff; }
+.work-detail-step--4 { background-color: #f8f9fc; }
+.work-detail-step--5 { background-color: #ffffff; }
 
 .work-detail-content__inner {
     max-width: 1200px;
@@ -466,12 +481,13 @@ body>.carousel-cursor.is-prev svg {
 }
 
 .work-detail-content__inner ul,
-.work-detail-content__inner ol,
+.work-detail-content__inner ol
 {
 margin-top: 0;
 margin-bottom: 2em;
-padding-left: 20px;
+padding-left: 1.2em;
 max-width: 800px;
+list-style-position: outside;
 }
 
 .work-detail-content__inner p+ul {

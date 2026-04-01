@@ -16410,7 +16410,7 @@ img {
   border-bottom-color: #001772;
 }
 
-.page-content.about-active p {
+.page-content.about-active p:not(.work-tile__subtitle) {
   color: #434f66;
 }
 

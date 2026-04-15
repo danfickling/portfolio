@@ -288,7 +288,7 @@
     margin: 0 !important;
     /* Width matches the full content area (max 1200px) */
     flex: 0 0 calc(100vw - 50px);
-    max-width: 1200px;
+    max-width: 1100px;
     scroll-snap-align: start;
     position: relative;
     opacity: 0.25;
@@ -332,7 +332,7 @@
 
 @media screen and (min-width: 1300px) {
     .image-carousel figure {
-        flex: 0 0 1200px;
+        flex: 0 0 1100px;
     }
 }
 
@@ -381,6 +381,30 @@
 .image-carousel figure.is-active figcaption,
 .image-carousel.is-single figcaption {
     opacity: 1;
+}
+
+/* Carousel position indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 36px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.is-active {
+    background-color: #333;
 }
 
 /* Custom Cursor styling */

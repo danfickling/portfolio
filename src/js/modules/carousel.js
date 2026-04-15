@@ -41,6 +41,19 @@ export function initCarousel() {
             return;
         }
 
+        // Create indicator dots
+        const indicatorContainer = document.createElement('div');
+        indicatorContainer.className = 'carousel-indicators';
+        figures.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+            dot.setAttribute('aria-label', `Go to image ${i + 1}`);
+            dot.addEventListener('click', () => {
+                figures[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+            });
+            indicatorContainer.appendChild(dot);
+        });
+
         // Setup observer for each figure, relative to the carousel viewport
         const carouselObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -48,6 +61,12 @@ export function initCarousel() {
                     const siblings = carousel.querySelectorAll('figure');
                     siblings.forEach(sibling => sibling.classList.remove('is-active'));
                     entry.target.classList.add('is-active');
+
+                    // Update indicators
+                    const index = Array.from(siblings).indexOf(entry.target);
+                    indicatorContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                        dot.classList.toggle('is-active', i === index);
+                    });
                 }
             });
         }, {
@@ -173,5 +192,11 @@ export function initCarousel() {
                 }
             });
         }
+
+        // Insert indicators after the carousel (or after the wrapper on touch)
+        const insertTarget = carousel.parentNode.classList.contains('image-carousel-wrapper')
+            ? carousel.parentNode
+            : carousel;
+        insertTarget.after(indicatorContainer);
     });
 }

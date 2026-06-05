@@ -75,6 +75,9 @@ export function initCarousel() {
             threshold: 0.6
         });
 
+        // Explicitly mark the first figure as active before the observer fires asynchronously
+        figures[0].classList.add('is-active');
+
         figures.forEach(figure => carouselObserver.observe(figure));
 
         if (isTouchDevice) {
@@ -183,12 +186,13 @@ export function initCarousel() {
                 const rect = carousel.getBoundingClientRect();
                 const xInCarousel = e.clientX - rect.left;
                 const isLeftHalf = xInCarousel < rect.width / 2;
-                const scrollAmount = carousel.clientWidth * 0.75;
 
-                if (isLeftHalf && canGoPrev) {
-                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                } else if (!isLeftHalf && canGoNext) {
-                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                const currentIndex = Array.from(figures).findIndex(f => f.classList.contains('is-active'));
+
+                if (isLeftHalf && canGoPrev && currentIndex > 0) {
+                    figures[currentIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                } else if (!isLeftHalf && canGoNext && currentIndex < figures.length - 1) {
+                    figures[currentIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
                 }
             });
         }

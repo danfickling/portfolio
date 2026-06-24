@@ -4,6 +4,7 @@
       "id": "booking",
       "title": "Booking.com for Business",
       "subtitle": "2021-2025",
+      "enticer": "Transforming the user experience from high-churn to a trusted, go-to platform for business travel.",
       "image": "booking-hero.png",
       "alt": "Booking.com for Business",
       "page": "/portfolio/work-booking.html"
@@ -12,6 +13,7 @@
       "id": "tesco",
       "title": "Tesco",
       "subtitle": "2019-2020",
+      "enticer": "Turning a high-friction, manual process for buyers into a streamlined product range overlay management system.",
       "image": "tesco-dash.png",
       "alt": "Tesco",
       "page": "/portfolio/work-tesco.html"
@@ -20,6 +22,7 @@
       "id": "virgin-trains",
       "title": "Virgin Trains",
       "subtitle": "2017-2018",
+      "enticer": "Increasing revenue by £1.14M a year through experiments and iterative growth design.",
       "image": "vt-hero.png",
       "alt": "Virgin Trains",
       "page": "/portfolio/work-virgin.html"
@@ -28,6 +31,7 @@
       "id": "work-other",
       "title": "Other Works",
       "subtitle": "2010-2016",
+      "enticer": "Design and front-end for e-comm, publishing and other projects.",
       "image": "neveralone.jpg",
       "alt": "Other Works",
       "page": "/portfolio/work-other.html"

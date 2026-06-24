@@ -18,11 +18,14 @@ export function initScrollAnimations() {
   const introSection = document.querySelector('.section--intro');
   const sectionTop = document.querySelector('.section__top');
   const projects = document.querySelectorAll('.project');
+  const workTiles = document.querySelectorAll('.work-tile');
 
   // Parallax effect on the top white section
   // Note: .section__top has an initial CSS animation (1s delay + 1.75s duration = 2.75s total)
   if (sectionTop && introSection) {
     let animationComplete = document.body.classList.contains('no-animation');
+    let parallaxTicking = false;
+    sectionTop.style.willChange = 'transform';
 
     const updateParallax = () => {
       // If no-animation is set, we can update immediately or just ensure logic runs
@@ -41,23 +44,36 @@ export function initScrollAnimations() {
       sectionTop.style.transform = `translate3d(0, ${translateY}vh, 0)`;
     };
 
+    const requestParallaxUpdate = () => {
+      if (parallaxTicking) return;
+      parallaxTicking = true;
+
+      requestAnimationFrame(() => {
+        updateParallax();
+        parallaxTicking = false;
+      });
+    };
+
     // Only set timeout if we are animating
     if (!animationComplete) {
       setTimeout(() => {
         animationComplete = true;
-        updateParallax();
+        requestParallaxUpdate();
       }, 2750);
     } else {
       // Initial update if no animation
-      updateParallax();
+      requestParallaxUpdate();
     }
 
-    window.addEventListener('scroll', updateParallax, { passive: true });
+    window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    window.addEventListener('resize', requestParallaxUpdate);
   }
 
   // Toggle about-active class when about section reaches 40% of viewport
   // CSS handles all the smooth transitions (background color, opacity changes)
   if (aboutSection && pageContent) {
+    let aboutTicking = false;
+
     const updateAboutState = () => {
       const rect = aboutSection.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
@@ -70,8 +86,19 @@ export function initScrollAnimations() {
       }
     };
 
-    window.addEventListener('scroll', updateAboutState, { passive: true });
-    updateAboutState();
+    const requestAboutUpdate = () => {
+      if (aboutTicking) return;
+      aboutTicking = true;
+
+      requestAnimationFrame(() => {
+        updateAboutState();
+        aboutTicking = false;
+      });
+    };
+
+    window.addEventListener('scroll', requestAboutUpdate, { passive: true });
+    window.addEventListener('resize', requestAboutUpdate);
+    requestAboutUpdate();
   }
 
   // Add project--active class when projects scroll into view
@@ -81,6 +108,16 @@ export function initScrollAnimations() {
       start: 'top 80%',
       once: true,
       onEnter: () => project.classList.add('project--active')
+    });
+  });
+
+  // Reveal homepage work tiles on scroll
+  workTiles.forEach(tile => {
+    ScrollTrigger.create({
+      trigger: tile,
+      start: 'top 72%',
+      once: true,
+      onEnter: () => tile.classList.add('work-tile--active')
     });
   });
 

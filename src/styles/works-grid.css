@@ -1,103 +1,241 @@
-/* Works Grid Styles */
+/* Works Section */
 
-/* Add spacing between about and works sections */
+.page-content {
+    padding-bottom: 0;
+}
+
+.section--about h3,
+.section--about p {
+    color: #434f66;
+}
+
+.section--about h3 {
+    color: #001772;
+}
+
+.section--about h3:before {
+    border-bottom-color: #001772;
+}
+
+.page-content.about-active .section--about p {
+    color: #434f66;
+}
+
 #work {
-    margin-top: 4rem;
+    margin-top: 0;
+    scroll-margin-top: 80px;
 }
 
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 2rem 0;
+#works {
+    scroll-margin-top: 80px;
 }
 
-@media (max-width: 768px) {
-    .works-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 767px) {
+    #work {
+        scroll-margin-top: 60px;
+    }
+
+    #works {
+        scroll-margin-top: 60px;
     }
 }
 
-/* Work Tile */
+.works-anchor {
+    height: 0;
+}
+
+.section--about {
+    padding-bottom: 105px;
+}
+
+@media screen and (min-width: 695px) {
+    .section--about {
+        padding-bottom: 120px;
+    }
+}
+
+.section--work {
+    max-width: none;
+    padding: 0;
+}
+
+.works-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
 .work-tile {
-    position: relative;
     display: block;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #1a1a2e;
+    color: #ffffff;
     text-decoration: none;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
 }
 
-.work-tile:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Tile Image */
-.work-tile__image {
+.work-tile__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    grid-template-rows: 6rem auto;
+    column-gap: 2.67rem;
+    align-items: stretch;
+    min-height: 320px;
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+@media screen and (min-width: 695px) {
+    .work-tile__inner {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.work-tile__title {
+    margin: 0;
+    color: inherit;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.work-tile__subtitle {
+    margin: 0 0 0.85rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.work-tile__enticer {
+    margin: 1rem 0 0;
+    color: #c7ced8;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    max-width: 46ch;
+}
+
+.work-tile__image {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
     display: block;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    align-self: end;
+    object-fit: cover;
+    object-position: center 8px;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: object-position 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-tile--active .work-tile__image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.no-js .work-tile__image,
+body.no-animation .work-tile__image {
+    opacity: 1;
+    transform: none;
+}
+
+.work-tile__content {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem 2.2rem;
 }
 
 .work-tile:hover .work-tile__image {
-    transform: scale(1.08);
+    object-position: center 0;
 }
 
-/* Overlay - stronger gradient for better contrast */
-.work-tile__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top,
-            rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0.7) 30%,
-            rgba(0, 0, 0, 0.3) 60%,
-            rgba(0, 0, 0, 0.1) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1.5rem;
-    opacity: 1;
-    transition: opacity 0.3s ease;
+.work-tile--booking {
+    background: linear-gradient(118deg, #0b1f52 0%, #06183f 56%, #0a1f4f 100%);
 }
 
-.work-tile:hover .work-tile__overlay {
-    opacity: 1;
+.work-tile--booking .work-tile__enticer {
+    color: #a3b2cb;
 }
 
-/* Tile Title */
-.work-tile__title {
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin: 0;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
-    transform: translateY(0);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.work-tile--tesco {
+    background: linear-gradient(118deg, #00478d 0%, #005baa 52%, #0a6ac0 100%);
 }
 
-.work-tile:hover .work-tile__title {
-    transform: translateY(0);
+.work-tile--tesco .work-tile__enticer {
+    color: #bed5e9;
 }
 
-/* Tile Subtitle */
-.work-tile__subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.875rem;
-    font-weight: 300;
-    margin: 0.5rem 0 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease 0.1s,
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+.work-tile--virgin-trains {
+    background: linear-gradient(118deg, #4a072f 0%, #730f42 52%, #9a1858 100%);
 }
 
-.work-tile:hover .work-tile__subtitle {
-    opacity: 1;
-    transform: translateY(0);
+.work-tile--virgin-trains .work-tile__enticer {
+    color: #d8b4c7;
+}
+
+.work-tile--work-other {
+    background: linear-gradient(118deg, #1f2937 0%, #2e3a4c 52%, #3b495f 100%);
+}
+
+.work-tile--work-other .work-tile__enticer {
+    color: #aab7c8;
+}
+
+.page-content.about-active .section--work .work-tile__enticer {
+    color: inherit;
+}
+
+.page-content.about-active .section--work .work-tile--booking .work-tile__enticer {
+    color: #a3b2cb;
+}
+
+.page-content.about-active .section--work .work-tile--tesco .work-tile__enticer {
+    color: #bed5e9;
+}
+
+.page-content.about-active .section--work .work-tile--virgin-trains .work-tile__enticer {
+    color: #d8b4c7;
+}
+
+.page-content.about-active .section--work .work-tile--work-other .work-tile__enticer {
+    color: #aab7c8;
+}
+
+@media (max-width: 900px) {
+    .works-grid {
+        gap: 1rem;
+    }
+
+    .work-tile__inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 4.5rem auto auto;
+        column-gap: 0;
+        min-height: 0;
+    }
+
+    .work-tile__image {
+        grid-column: 1;
+        grid-row: 2;
+        aspect-ratio: 16 / 9;
+        min-height: 220px;
+    }
+
+    .work-tile__content {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 1.4rem 1.25rem;
+    }
 }

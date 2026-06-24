@@ -31,6 +31,18 @@
     flex-shrink: 0;
 }
 
+.about__btn {
+    background-color: #ffffff;
+    color: #001772;
+    border-color: #434f66;
+}
+
+.about__btn:hover {
+    background-color: #e9efff;
+    color: #001772;
+    border-color: #434f66;
+}
+
 /* About Section Buttons Layout */
 .about__links {
     display: flex;
